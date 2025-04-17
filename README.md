@@ -1,5 +1,5 @@
-# kinova-cinema-bot
-Using a Kinova Gen3 Lite robot arm with an insta360 camera attached, implementation of custom control scheme and CV head tracking to smoothly track heads.
+# kinova-cinema-bot (simulator)
+Simulator for kinova-cinema-bot project.
 
 ## Table of Contents
 
@@ -21,23 +21,23 @@ before activating it with
 ```
 conda activate <my_env_name>
 ```
+## ROS Sim Setup
+The sim environment uses ros2 and gazebo. It has been tested with ros2 Humble and Gazebo Fortress however should (in theory) work with Jazzy and newer but it is not recommended. Please follow [these instructions](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) for installing ros2 humble.
 
-## Installing Kortex Python API (and dependencies)
-Install what is needed to run the examples via a downloaded whl file (Python wheel package).
-
-The whl file can be downloaded via the Kinova Artifactory: [kortex_api](https://artifactory.kinovaapps.com:443/artifactory/generic-public/kortex/API/2.6.0/kortex_api-2.6.0.post3-py3-none-any.whl)  
-
-On Linux:
-
-```sh
-python3 -m pip install <whl relative fullpath name>.whl
+Once installed, source your ros2 installation before running the sim. It should look something like:
 ```
-**Note:** root privilege is usually required to install a new module under Linux.
+source /opt/ros/humble/setup.bash
+```
+but it depends on how ros2 was installed.
 
-## Reference
-* [Kinova API Github repo/documentation](https://github.com/Kinovarobotics/Kinova-kortex2_Gen3_G3L)
-* [Kinova Gen3 Lite robot arm manual](https://artifactory.kinovaapps.com/artifactory/generic-documentation-public/Documentation/Gen3%20lite/Technical%20documentation/User%20Guide/Gen3_lite_USER_GUIDE_R03.pdf)
+# Running the Simulation
+** Make sure you have sourced your ros2 installation **
 
+In the project directory, run the following command to begin the simulation.
+
+```
+ros2 launch kortex_description view_robot.launch.py robot_type:=gen3_lite dof:=6
+```
 # Kinematics
 The first part of this project consists of creating custom forward/inverse kinematics for the robot.
 
