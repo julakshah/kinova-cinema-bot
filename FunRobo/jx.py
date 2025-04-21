@@ -16,19 +16,12 @@ import sys
 import os
 import time
 import threading
+import math
+import numpy as np
 
 from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
 
 from kortex_api.autogen.messages import Base_pb2, Common_pb2
-
-# Position of the protection zone (in meters)
-PROTECTION_ZONE_POS =  [0.75, 0.0, 0.4]
-
-# Size of the protection zone (in meters)
-PROTECTION_ZONE_DIMENSIONS = [0.05, 0.3, 0.4]
-
-# Theta values of the protection zone movement (in degrees)
-PROTECTION_ZONE_MOVEMENT_THETAS = [90.0, 0.0, 90.0]
 
 # Waiting time between actions (in milliseconds)
 ACTION_WAITING_TIME = 1
@@ -78,14 +71,7 @@ def move_to_home_position(base):
     for i, angle in enumerate(target_angles):
         joint_angle = action.reach_joint_angles.joint_angles.joint_angles.add()
         joint_angle.joint_identifier = i + 1
-        joint_angle.value = angle  # ← correct field name
-
-    
-    
-    
-    # for action in action_list.action_list:
-    #     if action.name == "Home":
-    #         action_handle = action.handle
+        joint_angle.value = angle  # correct field name
 
     # if action_handle == None:
     #     print("Can't reach safe position. Exiting")
@@ -103,102 +89,6 @@ def move_to_home_position(base):
 
     base.Unsubscribe(notification_handle)
 
-def move_to_protection_zone(base):
-    
-    command = Base_pb2.TwistCommand()
-
-    command.reference_frame = Base_pb2.CARTESIAN_REFERENCE_FRAME_BASE
-    command.duration = 0
-
-    twist = command.twist
-    twist.linear_x = 0.05
-    twist.linear_y = 0
-    twist.linear_z = 0
-    twist.angular_x = 0
-    twist.angular_y = 0
-    twist.angular_z = 0
-
-    print ("Moving towards the protection zone for 4 seconds...")
-    base.SendTwistCommand(command)
-
-    # Let time for twist to be executed
-    time.sleep(4)
-
-    print ("Stopping the robot...")
-    base.Stop()
-    time.sleep(1)
-
-def move_in_front_of_protection_zone(base):
-    
-    print("Starting Cartesian action movement ...")
-    action = Base_pb2.Action()
-    action.name = "Example Cartesian action movement"
-    action.application_data = ""
- 
-    cartesian_pose = action.reach_pose.target_pose
-    cartesian_pose.x = PROTECTION_ZONE_POS[0] - 0.1     # (meters)
-    cartesian_pose.y = PROTECTION_ZONE_POS[1]           # (meters)
-    cartesian_pose.z = PROTECTION_ZONE_POS[2]           # (meters)
-    cartesian_pose.theta_x = PROTECTION_ZONE_MOVEMENT_THETAS[0] # (degrees)
-    cartesian_pose.theta_y = PROTECTION_ZONE_MOVEMENT_THETAS[1] # (degrees)
-    cartesian_pose.theta_z = PROTECTION_ZONE_MOVEMENT_THETAS[2] # (degrees)
-
-    e = threading.Event()
-    notification_handle = base.OnNotificationActionTopic(
-        check_for_end_or_abort(e),
-        Base_pb2.NotificationOptions()
-    )
-
-    print("Executing action")
-    base.ExecuteAction(action)
-
-    print("Waiting for movement to finish ...")
-    e.wait()
-
-    print("Cartesian movement completed")
-
-    base.Unsubscribe(notification_handle)
-
-def print_protection_zones(base):
-
-    all_protection_zones = base.ReadAllProtectionZones()
-
-    print("PROTECTION ZONES")
-    for protection_zone in all_protection_zones.protection_zones:
-        message = "Protection Zone : " + protection_zone.name + \
-        " Origin : [ " \
-        + str(protection_zone.shape.origin.x) + " "\
-        + str(protection_zone.shape.origin.y) + " "\
-        + str(protection_zone.shape.origin.z) \
-        + " ] Dimensions : [ "
-        for dim in protection_zone.shape.dimensions:
-            message += str(dim) + " "
-        message += "]"
-        print(message)
-
-def create_protection_zone(base):
-
-    zone = Base_pb2.ProtectionZone()
-
-    zone.name = "Example Protection Zone"
-    zone.is_enabled = True
-    shape = zone.shape
-    shape.shape_type = Base_pb2.RECTANGULAR_PRISM
-
-    point = shape.origin
-    point.x = PROTECTION_ZONE_POS[0]
-    point.y = PROTECTION_ZONE_POS[1]
-    point.z = PROTECTION_ZONE_POS[2]
-    shape.dimensions.append(PROTECTION_ZONE_DIMENSIONS[0])
-    shape.dimensions.append(PROTECTION_ZONE_DIMENSIONS[1])
-    shape.dimensions.append(PROTECTION_ZONE_DIMENSIONS[2])
-
-    shape.orientation.row1.column1 = 1.0
-    shape.orientation.row2.column2 = 1.0
-    shape.orientation.row3.column3 = 1.0
-
-    return base.CreateProtectionZone(zone)
-
 def main():
     
     # Import the utilities helper module
@@ -207,6 +97,27 @@ def main():
 
     # Parse arguments
     args = utilities.parseConnectionArguments()
+    
+    ul1, ul2, ul3, ul4, ul5, ul6, ul7 = 128.3, 115, 280, 140, 108, 108, 130
+    sl1, sl2, sl3, sl4 = 30, 20, 28.5, 28.5
+    t1, t2, t3, t4, t5, t6 = 0,0,0,0,0,0 
+    
+    dhtable = [
+        [t1, 128.3 + 115.0, 0.0, math.pi / 2],
+        [t2 + math.pi / 2, 30.0, 280.0, math.pi],
+        [t3 + math.pi / 2, 20.0, 0.0, math.pi / 2],
+        [t4 + math.pi / 2, 140.0 + 105.0, 0.0, math.pi / 2],
+        [t5 + math.pi, 28.5 + 28.5, 0.0, math.pi / 2],
+        [t6 + math.pi / 2, 105.0 + 130.0, 0.0, 0.0]
+    ]
+
+    htmMatrices = []
+    
+    for i in range(len(dhtable)):
+        htmMatrices.append(dh_to_matrix(dhtable[i]))
+        
+    hm = htmMatrices[0] * htmMatrices[1] *  htmMatrices[2]  *  htmMatrices[3]  *  htmMatrices[4] *  htmMatrices[5] 
+        
     
     # Create connection to the device and get the router
     with utilities.DeviceConnection.createTcpConnection(args) as router:
@@ -219,9 +130,32 @@ def main():
         # Move to initial position
         move_to_home_position(base)
 
-        # Print final protection zones
-        # The example protection zone should be removed
-        print_protection_zones(base)
 
 if __name__ == "__main__":
     main()
+
+
+# things we need to make actually write our own code
+
+"""
+getAllJointAngles
+grab DH table
+connect controller/keyboard with our commands
+"""
+
+def dh_to_matrix(dh_params: list) -> np.ndarray:
+    """Converts Denavit-Hartenberg parameters to a transformation matrix.
+
+    Args:
+        dh_params (list): Denavit-Hartenberg parameters [theta, d, a, alpha].
+
+    Returns:
+        np.ndarray: A 4x4 transformation matrix.
+    """
+    theta, d, a, alpha = dh_params
+    return np.array([
+        [cos(theta), -sin(theta) * cos(alpha), sin(theta) * sin(alpha), a * cos(theta)],
+        [sin(theta), cos(theta) * cos(alpha), -cos(theta) * sin(alpha), a * sin(theta)],
+        [0, sin(alpha), cos(alpha), d],
+        [0, 0, 0, 1]
+    ])
