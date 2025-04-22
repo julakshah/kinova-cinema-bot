@@ -2,6 +2,14 @@
 Using a Kinova Gen3 Lite robot arm with an insta360 camera attached, implementation of custom control scheme and CV head tracking to smoothly track heads.
 
 ## Table of Contents
+* kinova-cinema-bot
+    * Project Structure and History
+* Setup
+    * Required python version and modules
+        * I have newer python
+    * Installing Kortex Python API (and dependencies)
+    * Reference
+* Kinematics
 
 # Setup
 This setup guide is for MacOS/Linux machines.
