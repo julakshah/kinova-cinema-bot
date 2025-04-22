@@ -18,6 +18,7 @@ class Gen3LiteKinematics:
             [np.pi() / 2, 0, (28.5 + 28.5), self.t[5] + np.pi()],
             [0, 0, (105 + 130), self.t[6] + np.pi() / 2]
         ]
+        self.ndof = 6
 
     def jacobian(self):
         """
@@ -27,8 +28,21 @@ class Gen3LiteKinematics:
         the cartesian movement of a point in relation to it's center about it's
         axis of rotation.
         """
+        # step 1: compute the cumulative transformation
+        T_cumulative = [np.eye(4)]
+        for i, row in enumerate(self.dh):
+            Ti = dh_to_h(row)
+            T_cumulative.append(T_cumulative[-1] @ Ti)
         
-        
+        # step 3: compute difference in joint and EE position (r)
+        J = np.zeros(3, self.ndof)
+        for i in range(self.ndof):
+            r = (T_cumulative[i] - T_cumulative[-1]) @ np.array([0, 0, 0, 1])
+            z = T_cumulative[i][:3, :3] @ np.array([0, 0, 1])
+            J[:, i] = np.cross(z, r)
+
+        return J # the linear velo component of Jacobian
+    
     def inv_jacobian(self):
         """define the inverse jacobian for current dh"""
 
@@ -49,3 +63,13 @@ class Gen3LiteKinematics:
         Numerically solve for the joint positions of a desired EE pose
         using the Newton-Raphson method of gradient descent.
         """
+
+def dh_to_h(dh_i: list):
+    al, a, d, t = dh_i[0], dh_i[1], dh_i[2], dh_i[3]
+    T = np.array([
+        [np.cos(t), -1 * np.cos(al) * np.sin(t), np.sin(al) * np.sin(t), a * np.cos(t)],
+        [np.sin(t), np.cos(al) * np.cos(t), -1 * np.cos(t) * np.sin(al), a],
+        [0, np.sin(al), np.cos(al), d],
+        [0, 0, 0, 1]
+    ])
+    return T

@@ -3,10 +3,7 @@
 ###
 # KINOVA (R) KORTEX (TM)
 #
-# Copyright (c) 2019 Kinova inc. All rights reserved.
-#
-# This software may be modified and distributed
-# under the terms of the BSD 3-Clause license.
+# Copyright (c) 20 the BSD 3-Clause license.
 #
 # Refer to the LICENSE file for details.
 #
