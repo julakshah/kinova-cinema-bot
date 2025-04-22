@@ -113,22 +113,25 @@ def main():
 
     htmMatrices = []
     
-    for i in range(len(dhtable)):
-        htmMatrices.append(dh_to_matrix(dhtable[i]))
+    # for i in range(len(dhtable)):
+    #     htmMatrices.append(dh_to_matrix(dhtable[i]))
         
-    hm = htmMatrices[0] * htmMatrices[1] *  htmMatrices[2]  *  htmMatrices[3]  *  htmMatrices[4] *  htmMatrices[5] 
+    # hm = htmMatrices[0] * htmMatrices[1] *  htmMatrices[2]  *  htmMatrices[3]  *  htmMatrices[4] *  htmMatrices[5] 
         
-    
     # Create connection to the device and get the router
     with utilities.DeviceConnection.createTcpConnection(args) as router:
 
         # Create required services
         base = BaseClient(router)
 
-        # Example core
-
-        # Move to initial position
+           
+    # Assuming 'base' is an instance of BaseClient
+            # Move to initial position
         move_to_home_position(base)
+        joint_angles = base.GetMeasuredJointAngles()
+
+        for joint_angle in joint_angles.joint_angles:
+            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
 
 
 if __name__ == "__main__":
@@ -154,8 +157,8 @@ def dh_to_matrix(dh_params: list) -> np.ndarray:
     """
     theta, d, a, alpha = dh_params
     return np.array([
-        [cos(theta), -sin(theta) * cos(alpha), sin(theta) * sin(alpha), a * cos(theta)],
-        [sin(theta), cos(theta) * cos(alpha), -cos(theta) * sin(alpha), a * sin(theta)],
-        [0, sin(alpha), cos(alpha), d],
-        [0, 0, 0, 1]
+        [np.cos(theta), -np.sin(theta) * np.cos(alpha), np.sin(theta) * np.sin(alpha), a * np.cos(theta)],
+        [np.sin(theta),  np.cos(theta) * np.cos(alpha), -np.cos(theta) * np.sin(alpha), a * np.sin(theta)],
+        [0,              np.sin(alpha),                 np.cos(alpha),                 d],
+        [0,              0,                             0,                             1]
     ])
