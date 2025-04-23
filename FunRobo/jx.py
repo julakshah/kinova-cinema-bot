@@ -18,6 +18,7 @@ import time
 import threading
 import math
 import numpy as np
+from pynput import keyboard
 
 from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
 
@@ -118,24 +119,27 @@ def main():
         
     # hm = htmMatrices[0] * htmMatrices[1] *  htmMatrices[2]  *  htmMatrices[3]  *  htmMatrices[4] *  htmMatrices[5] 
         
-    # Create connection to the device and get the router
+    # Create connection to the device and get the router      
+            
+    controller = TeleopController()
+
+    # Connect to robot
     with utilities.DeviceConnection.createTcpConnection(args) as router:
-
-        # Create required services
         base = BaseClient(router)
-
-           
-    # Assuming 'base' is an instance of BaseClient
-            # Move to initial position
         move_to_home_position(base)
         joint_angles = base.GetMeasuredJointAngles()
 
         for joint_angle in joint_angles.joint_angles:
             print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
+        while controller.running:
+            # Example: apply velocity command
+            velocity = controller.get_velocity_command()
 
+            # TODO: Create and send velocity command here using `velocity` and `base`
+            time.sleep(0.1)  # small delay to avoid flooding
 
-if __name__ == "__main__":
-    main()
+        print("Teleop ended.")
+
 
 
 # things we need to make actually write our own code
@@ -162,3 +166,48 @@ def dh_to_matrix(dh_params: list) -> np.ndarray:
         [0,              np.sin(alpha),                 np.cos(alpha),                 d],
         [0,              0,                             0,                             1]
     ])
+class TeleopController:
+    def __init__(self):
+        self.v = [0, 0, 0]  # x, y, z velocity commands
+        self.running = True
+        self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
+        self.listener.start()
+
+    def on_press(self, key):
+        try:
+            if key == keyboard.Key.up:
+                self.v[1] = 1
+            elif key == keyboard.Key.down:
+                self.v[1] = -1
+            elif key == keyboard.Key.left:
+                self.v[0] = -1
+            elif key == keyboard.Key.right:
+                self.v[0] = 1
+            elif key.char == 'w':
+                self.v[2] = 1
+            elif key.char == 's':
+                self.v[2] = -1
+            elif key.char == 'q':  # exit on 'q'
+                self.running = False
+        except AttributeError:
+            pass
+
+    def on_release(self, key):
+        try:
+            if key == keyboard.Key.up or key == keyboard.Key.down:
+                self.v[1] = 0
+            elif key == keyboard.Key.left or key == keyboard.Key.right:
+                self.v[0] = 0
+            elif key.char == 'w' or key.char == 's':
+                self.v[2] = 0
+        except AttributeError:
+            pass
+
+    def get_velocity_command(self):
+        # convert self.v to your robot's expected format (e.g., Base_pb2.TwistCommand)
+        print(f"Velocity: {self.v}")  # replace with command to robot
+        return self.v
+
+
+if __name__ == "__main__":
+    main()
