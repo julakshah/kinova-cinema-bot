@@ -1,20 +1,10 @@
-#! /usr/bin/env python3
-
-###
-# KINOVA (R) KORTEX (TM)
-#
-# Copyright (c) 20 the BSD 3-Clause license.
-#
-# Refer to the LICENSE file for details.
-#
-###
-
 import sys
 import os
 import time
 import threading
 import math
 import numpy as np
+from pynput import keyboard
 
 from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
 
@@ -56,12 +46,6 @@ def move_to_home_position(base):
     action = Base_pb2.Action()
     action.name = "Custom joint angles"
     action.application_data = ""
-
-
-    # Specify that this is a REACH_JOINT_ANGLES action
-    # action.action_type = Base_pb2.REACH_JOINT_ANGLES
-
-
 
     target_angles = [10.0, 90.0, 30.0, 40.0, 50.0, 60.0]
 
@@ -115,21 +99,28 @@ def main():
         
     hm = htmMatrices[0] * htmMatrices[1] *  htmMatrices[2]  *  htmMatrices[3]  *  htmMatrices[4] *  htmMatrices[5] 
         
-    
-    # Create connection to the device and get the router
+    # Create connection to the device and get the router      
+            
+    controller = TeleopController()
+
+    # Connect to robot
     with utilities.DeviceConnection.createTcpConnection(args) as router:
-
-        # Create required services
         base = BaseClient(router)
-
-        # Example core
-
-        # Move to initial position
         move_to_home_position(base)
+        joint_angles = base.GetMeasuredJointAngles()
 
+        print(joint_angles.joint_angles)
+        for joint_angle in joint_angles.joint_angles:
+            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
+        while controller.running:
+            # Example: apply velocity command
+            velocity = controller.get_velocity_command()
 
-if __name__ == "__main__":
-    main()
+            # TODO: Create and send velocity command here using `velocity` and `base`
+            time.sleep(0.1)  # small delay to avoid flooding
+
+        print("Teleop ended.")
+
 
 
 # things we need to make actually write our own code
@@ -151,8 +142,83 @@ def dh_to_matrix(dh_params: list) -> np.ndarray:
     """
     theta, d, a, alpha = dh_params
     return np.array([
-        [cos(theta), -sin(theta) * cos(alpha), sin(theta) * sin(alpha), a * cos(theta)],
-        [sin(theta), cos(theta) * cos(alpha), -cos(theta) * sin(alpha), a * sin(theta)],
-        [0, sin(alpha), cos(alpha), d],
-        [0, 0, 0, 1]
+        [np.cos(theta), -np.sin(theta) * np.cos(alpha), np.sin(theta) * np.sin(alpha), a * np.cos(theta)],
+        [np.sin(theta),  np.cos(theta) * np.cos(alpha), -np.cos(theta) * np.sin(alpha), a * np.sin(theta)],
+        [0,              np.sin(alpha),                 np.cos(alpha),                 d],
+        [0,              0,                             0,                             1]
     ])
+    
+class TeleopController:
+    def __init__(self):
+        self.v = [0, 0, 0]  # x, y, z velocity commands
+        self.running = True
+        self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
+        self.listener.start()
+
+    def on_press(self, key):
+        try:
+            if key == keyboard.Key.up:
+                self.v[1] = 1
+            elif key == keyboard.Key.down:
+                self.v[1] = -1
+            elif key == keyboard.Key.left:
+                self.v[0] = -1
+            elif key == keyboard.Key.right:
+                self.v[0] = 1
+            elif key.char == 'w':
+                self.v[2] = 1
+            elif key.char == 's':
+                self.v[2] = -1
+            elif key.char == 'q':  # exit on 'q'
+                self.running = False
+        except AttributeError:
+            pass
+
+    def on_release(self, key):
+        try:
+            if key == keyboard.Key.up or key == keyboard.Key.down:
+                self.v[1] = 0
+            elif key == keyboard.Key.left or key == keyboard.Key.right:
+                self.v[0] = 0
+            elif key.char == 'w' or key.char == 's':
+                self.v[2] = 0
+        except AttributeError:
+            pass
+    
+    def get_velocity_command(self):
+        # convert self.v to your robot's expected format (e.g., Base_pb2.TwistCommand)
+        print(f"Velocity: {self.v}")  # replace with command to robot
+        return self.v
+
+
+def calc_ik_kinematics(EE: EndEffector, tol=.01, ilimit = 50):
+    
+    des_pos = [EE.x, EE.y, EE.z]
+    # cur_pos =  # get end effector position
+    error = pos_des - cur_pos
+    
+    # make sure that the loop doesn't run forever by defining iteration limit
+    for _ in range(ilimit):
+            # solve for error
+            pos_current = self.solve_forward_kinematics(self.theta)
+            error = pos_des - pos_current[0:3]
+            # If error outside tol, recalculate theta (Newton-Raphson)
+            if np.linalg.norm(error) > tol:
+                self.theta = self.theta + np.dot(
+                    self.inverse_jacobian(pseudo=True), error
+                )
+            # If error is within tolerence: break
+            else:
+                break
+    
+
+if __name__ == "__main__":
+    main()
+
+class EndEffector:
+    x: float = 0.0
+    y: float = 0.0
+    z: float = 0.0
+    rotx: float = 0.0
+    roty: float = 0.0
+    rotz: float = 0.0
