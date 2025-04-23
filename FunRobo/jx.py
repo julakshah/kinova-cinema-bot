@@ -18,8 +18,6 @@ import time
 import threading
 import math
 import numpy as np
-from pynput import keyboard
-import utilities
 
 from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
 
@@ -95,9 +93,7 @@ def main():
     
     # Import the utilities helper module
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-    
-    self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
-    self.listener.start()
+    import utilities
 
     # Parse arguments
     args = utilities.parseConnectionArguments()
@@ -136,15 +132,7 @@ def main():
 
         for joint_angle in joint_angles.joint_angles:
             print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
-    running = True
-    while running: 
-        joint_angles = base.GetMeasuredJointAngles()
 
-        for joint_angle in joint_angles.joint_angles:
-            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
-            
-        # if q key is pressed then running = False
-        
 
 if __name__ == "__main__":
     main()
@@ -174,48 +162,3 @@ def dh_to_matrix(dh_params: list) -> np.ndarray:
         [0,              np.sin(alpha),                 np.cos(alpha),                 d],
         [0,              0,                             0,                             1]
     ])
-
-
-def on_press(self, key): # VELOCITY OF THE ROBOT
-        """
-        Handles key press events to control the velocity of the robot.
-
-        Args:
-            key (pynput.keyboard.Key): The key that was pressed.
-        """
-        if self.vk_status:
-            if key == keyboard.Key.up: # Y up
-                self.v[1] = 1
-            elif key == keyboard.Key.down: # Y down
-                self.v[1] = -1
-            elif key == keyboard.Key.left: # x left
-                self.v[0] = -1
-            elif key == keyboard.Key.right: # x right
-                self.v[0] = 1
-            elif hasattr(key, 'char'):
-                if key.char == 'w': # z up
-                    self.v[2] = 1
-                elif key.char == 's': # z down
-                    self.v[2] = -1
-
-
-def on_release(self, key):
-        """
-        Handles key release events to stop the robot's movement.
-
-        Args:
-            key (pynput.keyboard.Key): The key that was released.
-        """
-        if key == keyboard.Key.up:
-            self.v[1] = 0
-        elif key == keyboard.Key.down:
-            self.v[1] = 0
-        elif key == keyboard.Key.left:
-            self.v[0] = 0
-        elif key == keyboard.Key.right:
-            self.v[0] = 0
-        elif hasattr(key, 'char'):
-            if key.char == 'w':
-                self.v[2] = 0
-            elif key.char == 's':
-                self.v[2] = 0
