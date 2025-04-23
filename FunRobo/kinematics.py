@@ -50,8 +50,16 @@ class Gen3LiteKinematics:
             return np.linalg.pinv(J)
         return np.linalg.inv(J)
 
-    def damped_inv_jacobian(self):
+    def damped_inv_jacobian(self, damping_factor=0.25):
         """define the damped inverse jacobian for current dh"""
+        if q is not None:
+            J = self.jacobian(q)
+        else:
+            J = self.jacobian()
+
+        JT = np.transpose(J)
+        I = np.eye(3)
+        return JT @ np.linalg.inv(J @ JT + (damping_factor**2)*I)
 
     def position_fk(self):
         """find EE position given joint angles"""
