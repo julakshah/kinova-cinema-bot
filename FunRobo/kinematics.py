@@ -43,8 +43,12 @@ class Gen3LiteKinematics:
 
         return J # the linear velo component of Jacobian
     
-    def inv_jacobian(self):
+    def inv_jacobian(self, J, pseudo=False):
         """define the inverse jacobian for current dh"""
+
+        if pseudo:
+            return np.linalg.pinv(J)
+        return np.linalg.inv(J)
 
     def damped_inv_jacobian(self):
         """define the damped inverse jacobian for current dh"""
