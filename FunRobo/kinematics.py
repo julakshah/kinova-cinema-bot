@@ -79,8 +79,37 @@ class Gen3LiteKinematics:
 
      
 
-    def velocity_fk(self):
-        """move in cartesion coordinates by desired velocity"""
+    def velocity_fk(self, desired_vel, del_time):
+        """
+        move in cartesion coordinates by desired velocity
+        
+        Args:
+            desired_vel: a list of floats giving the magnitude of desired
+                    veloctiy (m/s)
+            del_time: a float of time elapsed per loop in seconds  
+        """
+
+        if all(th == 0.0 for th in self.t):
+            self.t = [0.0 + np.random.rand() * .001 for _ in range(self.t)]
+            
+        vel = np.array(desired_vel)
+        J = self.damped_inv_jacobian()
+
+        theta_dot = J @ vel
+
+        # consider making this list comprehension
+        for i, ang_vel in enumerate(theta_dot):
+            # make sure it doesn't try
+            # over max velocity of 1 rad/s
+            if ang_vel > 1:
+                theta_dot[i] = 1
+
+        for i in range(self.ndof):
+            self.t[i] = self.t[i] + (theta_dot[i] * del_time)
+        
+        # potential different implementation with theta_dot return
+        # return theta_dot
+
 
     def analytical_ik(self): 
         """analytically solve for the joint angles of a desired position"""
