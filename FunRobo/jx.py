@@ -5,6 +5,7 @@ import threading
 import math
 import numpy as np
 from pynput import keyboard
+import kinematics
 
 from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
 
@@ -102,16 +103,32 @@ def main():
     # Create connection to the device and get the router      
             
     controller = TeleopController()
-
+    robot = kinematics.Gen3LiteKinematics()
+    
     # Connect to robot
     with utilities.DeviceConnection.createTcpConnection(args) as router:
+        
+        
+        print(joint_angles.joint_angles)
+        
+        # defines empty list for current theta values
+        cur_theta = []
+        # goes through the weird data structure and grabs each joint angle iteratively and appends to list
+        for joint_angle in joint_angles.joint_angles:
+            cur_theta.append(joint_angle.value)
+            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
+        
+        # robot angles = current theta values just assigned
+        robot.t = cur_theta
+
+        # calculate where the robot actually is 
+        robot.position_fk()
+        
         base = BaseClient(router)
         move_to_home_position(base)
         joint_angles = base.GetMeasuredJointAngles()
 
-        print(joint_angles.joint_angles)
-        for joint_angle in joint_angles.joint_angles:
-            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
+       
         while controller.running:
             # Example: apply velocity command
             velocity = controller.get_velocity_command()
@@ -130,23 +147,6 @@ getAllJointAngles
 grab DH table
 connect controller/keyboard with our commands
 """
-
-def dh_to_matrix(dh_params: list) -> np.ndarray:
-    """Converts Denavit-Hartenberg parameters to a transformation matrix.
-
-    Args:
-        dh_params (list): Denavit-Hartenberg parameters [theta, d, a, alpha].
-
-    Returns:
-        np.ndarray: A 4x4 transformation matrix.
-    """
-    theta, d, a, alpha = dh_params
-    return np.array([
-        [np.cos(theta), -np.sin(theta) * np.cos(alpha), np.sin(theta) * np.sin(alpha), a * np.cos(theta)],
-        [np.sin(theta),  np.cos(theta) * np.cos(alpha), -np.cos(theta) * np.sin(alpha), a * np.sin(theta)],
-        [0,              np.sin(alpha),                 np.cos(alpha),                 d],
-        [0,              0,                             0,                             1]
-    ])
     
 class TeleopController:
     def __init__(self):
@@ -215,10 +215,3 @@ def calc_ik_kinematics(EE: EndEffector, tol=.01, ilimit = 50):
 if __name__ == "__main__":
     main()
 
-class EndEffector:
-    x: float = 0.0
-    y: float = 0.0
-    z: float = 0.0
-    rotx: float = 0.0
-    roty: float = 0.0
-    rotz: float = 0.0
