@@ -47,7 +47,8 @@ def move_to_home_position(base):
     action.name = "Custom joint angles"
     action.application_data = ""
 
-    target_angles = [10.0, 90.0, 30.0, 40.0, 50.0, 60.0]
+    # target_angles = [0,0,0,0,0,0]
+    target_angles = [10,20,30,40,50,60]
 
     for i, angle in enumerate(target_angles):
         joint_angle = action.reach_joint_angles.joint_angles.joint_angles.add()
@@ -78,35 +79,33 @@ def main():
     # Parse arguments
     args = utilities.parseConnectionArguments()
         
-    # Create connection to the device and get the router      
-            
+    # Instantiate the classes for our kinematics and controller
     controller = TeleopController()
     robot = kinematics.Gen3LiteKinematics()
     
     print(robot.ee)
     # Connect to robot
     with utilities.DeviceConnection.createTcpConnection(args) as router:
+        base = BaseClient(router)
+        move_to_home_position(base)
+        joint_angles = base.GetMeasuredJointAngles()
+
         
-        
-        print(joint_angles.joint_angles)
+        #print(joint_angles.joint_angles)
         
         # defines empty list for current theta values
         cur_theta = []
         # goes through the weird data structure and grabs each joint angle iteratively and appends to list
         for joint_angle in joint_angles.joint_angles:
-            cur_theta.append(joint_angle.value)
+            cur_theta.append(np.deg2rad(joint_angle.value))
             print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
         
         # robot angles = current theta values just assigned
         robot.t = cur_theta
+        print("robot.t", robot.t)
 
         # calculate where the robot actually is 
         robot.position_fk()
-        
-        base = BaseClient(router)
-        move_to_home_position(base)
-        joint_angles = base.GetMeasuredJointAngles()
-
        
         while controller.running:
             # Example: apply velocity command

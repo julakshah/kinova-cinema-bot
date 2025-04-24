@@ -1,6 +1,7 @@
 """ module to contain all kinematics code for gen3_lite robot"""
 
 import numpy as np
+import math
 
 class Gen3LiteKinematics:
     """define the dh and position solver"""
@@ -11,16 +12,17 @@ class Gen3LiteKinematics:
 
         # DH parameters for gen3_lite robot arm
         self.dh = [ 
-            [np.pi / 2, 0, (128.3 + 115), self.t[1]],
-            [np.pi, 280, 30, self.t[2] + np.pi / 2],
-            [np.pi /2, 0, 20, self.t[3] + np.pi / 2],
-            [np.pi / 2, 0, (140 + 105), self.t[4] + np.pi / 2],
-            [np.pi / 2, 0, (28.5 + 28.5), self.t[5] + np.pi],
-            [0, 0, (105 + 130), self.t[6] + np.pi / 2]
+            [np.pi / 2, 0, (128.3 + 115), self.t[0]],
+            [np.pi, 280, 30, self.t[1] + np.pi / 2],
+            [np.pi /2, 0, 20, self.t[2] + np.pi / 2],
+            [np.pi / 2, 0, (140 + 105), self.t[3] + np.pi / 2],
+            [np.pi / 2, 0, (28.5 + 28.5), self.t[4] + np.pi],
+            [0, 0, (105 + 130), self.t[5] + np.pi / 2]
         ]
         self.ndof = 6
         self.ee = EndEffector()
-        
+        self.points = [None] * (self.ndof + 1)
+        self.T = np.zeros((self.ndof, 4, 4))
         self.calc_robot_points()
         
         
@@ -119,6 +121,7 @@ class Gen3LiteKinematics:
         # Calculate the EE axes in space (in the base frame)
         self.EE = [self.ee.x, self.ee.y, self.ee.z]
         # print(f"{self.points=}")
+        print("self.ee", self.EE)
         self.EE_axes = np.array(
             [self.T_ee[:3, i] * 0.075 + self.points[-1][:3] for i in range(3)]
         )
