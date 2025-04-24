@@ -47,7 +47,7 @@ def move_to_home_position(base):
     action.name = "Custom joint angles"
     action.application_data = ""
 
-    # target_angles = [0,0,0,0,0,0]
+    #target_angles = [0,0,0,0,0,0]
     target_angles = [10,20,30,40,50,60]
 
     for i, angle in enumerate(target_angles):
@@ -122,14 +122,13 @@ def main():
             print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
         
         # robot angles = current theta values just assigned
-        robot.t = cur_theta
-        print("robot.t", robot.t)
+        robot.theta = cur_theta
+        print("robot.theta", robot.theta)
 
         # calculate where the robot actually is 
         robot.position_fk()
        
         while controller.running:
-
             # Example: apply velocity command
             velocity = controller.get_velocity_command()
 

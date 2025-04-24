@@ -71,7 +71,19 @@ class Gen3LiteKinematics:
     def position_fk(self):
         """find EE position given joint angles"""
          # Compute the transformation matrices
+         
+                 # DH parameters for gen3_lite robot arm
+        self.dh = [ 
+            [np.pi / 2, 0, (128.3 + 115), self.theta[0]],
+            [np.pi, 280, 30, self.theta[1] + np.pi / 2],
+            [np.pi /2, 0, 20, self.theta[2] + np.pi / 2],
+            [np.pi / 2, 0, (140 + 105), self.theta[3] + np.pi / 2],
+            [np.pi / 2, 0, (28.5 + 28.5), self.theta[4] + np.pi],
+            [0, 0, (105 + 130), self.theta[5] + np.pi / 2]
+        ]
+        
         for i in range(self.ndof):
+            
             self.T[i] = dh_to_h(self.dh[i])
 
         # Calculate robot points (positions of joints)
