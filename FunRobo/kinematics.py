@@ -8,16 +8,16 @@ class Gen3LiteKinematics:
 
     def __init__(self):
         # define the joint angles (thetas) in radians
-        self.t = [0, 0, 0, 0, 0, 0]
+        self.theta = [0, 0, 0, 0, 0, 0]
 
         # DH parameters for gen3_lite robot arm
         self.dh = [ 
-            [np.pi / 2, 0, (128.3 + 115), self.t[0]],
-            [np.pi, 280, 30, self.t[1] + np.pi / 2],
-            [np.pi /2, 0, 20, self.t[2] + np.pi / 2],
-            [np.pi / 2, 0, (140 + 105), self.t[3] + np.pi / 2],
-            [np.pi / 2, 0, (28.5 + 28.5), self.t[4] + np.pi],
-            [0, 0, (105 + 130), self.t[5] + np.pi / 2]
+            [np.pi / 2, 0, (128.3 + 115), self.theta[0]],
+            [np.pi, 280, 30, self.theta[1] + np.pi / 2],
+            [np.pi /2, 0, 20, self.theta[2] + np.pi / 2],
+            [np.pi / 2, 0, (140 + 105), self.theta[3] + np.pi / 2],
+            [np.pi / 2, 0, (28.5 + 28.5), self.theta[4] + np.pi],
+            [0, 0, (105 + 130), self.theta[5] + np.pi / 2]
         ]
         self.ndof = 6
         self.ee = EndEffector()
@@ -35,13 +35,13 @@ class Gen3LiteKinematics:
         the cartesian movement of a point in relation to it's center about it's
         axis of rotation.
         """
-        # step 1: compute the cumulative transformation
+        # compute the cumulative transformation
         T_cumulative = [np.eye(4)]
         for i, row in enumerate(self.dh):
             Ti = dh_to_h(row)
             T_cumulative.append(T_cumulative[-1] @ Ti)
         
-        # step 3: compute difference in joint and EE position (r)
+        # compute difference in joint and EE position (r)
         J = np.zeros(3, self.ndof)
         for i in range(self.ndof):
             r = (T_cumulative[i] - T_cumulative[-1]) @ np.array([0, 0, 0, 1])
@@ -79,8 +79,37 @@ class Gen3LiteKinematics:
 
      
 
-    def velocity_fk(self):
-        """move in cartesion coordinates by desired velocity"""
+    def velocity_fk(self, desired_vel, del_time):
+        """
+        move in cartesion coordinates by desired velocity
+        
+        Args:
+            desired_vel: a list of floats giving the magnitude of desired
+                    veloctiy (m/s)
+            del_time: a float of time elapsed per loop in seconds  
+        """
+
+        if all(th == 0.0 for th in self.theta):
+            self.theta = [0.0 + np.random.rand() * .001 for _ in range(self.theta)]
+            
+        vel = np.array(desired_vel)
+        J = self.damped_inv_jacobian()
+
+        theta_dot = J @ vel
+
+        # consider making this list comprehension
+        for i, ang_vel in enumerate(theta_dot):
+            # make sure it doesn't try
+            # over max velocity of 1 rad/s
+            if ang_vel > 1:
+                theta_dot[i] = 1
+
+        for i in range(self.ndof):
+            self.theta[i] = self.theta[i] + (theta_dot[i] * del_time)
+        
+        # potential different implementation with theta_dot return
+        # return theta_dot
+
 
     def analytical_ik(self): 
         """analytically solve for the joint angles of a desired position"""
@@ -174,7 +203,7 @@ def dh_to_h(dh_i: list):
     al, a, d, t = dh_i[0], dh_i[1], dh_i[2], dh_i[3]
     T = np.array([
         [np.cos(t), -1 * np.cos(al) * np.sin(t), np.sin(al) * np.sin(t), a * np.cos(t)],
-        [np.sin(t), np.cos(al) * np.cos(t), -1 * np.cos(t) * np.sin(al), a],
+        [np.sin(t), np.cos(al) * np.cos(t), -1 * np.cos(t) * np.sin(al), a * np.sin(t)],
         [0, np.sin(al), np.cos(al), d],
         [0, 0, 0, 1]
     ])
