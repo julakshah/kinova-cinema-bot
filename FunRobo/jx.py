@@ -6,9 +6,8 @@ import math
 import numpy as np
 from pynput import keyboard
 import kinematics
-
+import utilities
 from kortex_api.autogen.client_stubs.BaseClientRpc import BaseClient
-
 from kortex_api.autogen.messages import Base_pb2, Common_pb2
 
 # Waiting time between actions (in milliseconds)
@@ -75,36 +74,16 @@ def main():
     
     # Import the utilities helper module
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-    import utilities
-
+    
     # Parse arguments
     args = utilities.parseConnectionArguments()
-    
-    ul1, ul2, ul3, ul4, ul5, ul6, ul7 = 128.3, 115, 280, 140, 108, 108, 130
-    sl1, sl2, sl3, sl4 = 30, 20, 28.5, 28.5
-    t1, t2, t3, t4, t5, t6 = 0,0,0,0,0,0 
-    
-    dhtable = [
-        [t1, 128.3 + 115.0, 0.0, math.pi / 2],
-        [t2 + math.pi / 2, 30.0, 280.0, math.pi],
-        [t3 + math.pi / 2, 20.0, 0.0, math.pi / 2],
-        [t4 + math.pi / 2, 140.0 + 105.0, 0.0, math.pi / 2],
-        [t5 + math.pi, 28.5 + 28.5, 0.0, math.pi / 2],
-        [t6 + math.pi / 2, 105.0 + 130.0, 0.0, 0.0]
-    ]
-
-    htmMatrices = []
-    
-    for i in range(len(dhtable)):
-        htmMatrices.append(dh_to_matrix(dhtable[i]))
-        
-    hm = htmMatrices[0] * htmMatrices[1] *  htmMatrices[2]  *  htmMatrices[3]  *  htmMatrices[4] *  htmMatrices[5] 
         
     # Create connection to the device and get the router      
             
     controller = TeleopController()
     robot = kinematics.Gen3LiteKinematics()
     
+    print(robot.ee)
     # Connect to robot
     with utilities.DeviceConnection.createTcpConnection(args) as router:
         
@@ -191,25 +170,6 @@ class TeleopController:
         return self.v
 
 
-def calc_ik_kinematics(EE: EndEffector, tol=.01, ilimit = 50):
-    
-    des_pos = [EE.x, EE.y, EE.z]
-    # cur_pos =  # get end effector position
-    error = pos_des - cur_pos
-    
-    # make sure that the loop doesn't run forever by defining iteration limit
-    for _ in range(ilimit):
-            # solve for error
-            pos_current = self.solve_forward_kinematics(self.theta)
-            error = pos_des - pos_current[0:3]
-            # If error outside tol, recalculate theta (Newton-Raphson)
-            if np.linalg.norm(error) > tol:
-                self.theta = self.theta + np.dot(
-                    self.inverse_jacobian(pseudo=True), error
-                )
-            # If error is within tolerence: break
-            else:
-                break
     
 
 if __name__ == "__main__":

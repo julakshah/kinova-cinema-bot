@@ -21,6 +21,8 @@ class Gen3LiteKinematics:
         self.ndof = 6
         self.ee = EndEffector()
         
+        self.calc_robot_points()
+        
         
 
     def jacobian(self):
@@ -120,6 +122,8 @@ class Gen3LiteKinematics:
         self.EE_axes = np.array(
             [self.T_ee[:3, i] * 0.075 + self.points[-1][:3] for i in range(3)]
         )
+        
+        
 
 def rotm_to_euler(R) -> tuple:
     """Converts a rotation matrix to Euler angles (roll, pitch, yaw).
@@ -178,3 +182,23 @@ class EndEffector:
     rotx: float = 0.0
     roty: float = 0.0
     rotz: float = 0.0
+    
+def calc_ik_kinematics(EE: EndEffector, tol=.01, ilimit = 50):
+    
+    des_pos = [EE.x, EE.y, EE.z]
+    # cur_pos =  # get end effector position
+    error = pos_des - cur_pos
+    
+    # make sure that the loop doesn't run forever by defining iteration limit
+    for _ in range(ilimit):
+            # solve for error
+            pos_current = self.solve_forward_kinematics(self.theta)
+            error = pos_des - pos_current[0:3]
+            # If error outside tol, recalculate theta (Newton-Raphson)
+            if np.linalg.norm(error) > tol:
+                self.theta = self.theta + np.dot(
+                    self.inverse_jacobian(pseudo=True), error
+                )
+            # If error is within tolerence: break
+            else:
+                break
