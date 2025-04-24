@@ -71,7 +71,26 @@ def move_to_home_position(base):
 
     base.Unsubscribe(notification_handle)
 
+def base_to_robot_theta(base_dict):
+    """
+    Converts the dictionary of joint angles given by
+    kinova base into a list for the robot kinematics to work.
+    
+    Args:
+        base_dict: dictionary containing the joint angles of robot
+            return from base.
+            
+    Returns:
+        a list of joint angles that the robot is at.
+    """
+    # defines empty list for current theta values
+    cur_theta = []
+    # goes through the weird data structure and grabs each joint angle iteratively and appends to list
+    for joint_angle in base_dict.joint_angles:
+            cur_theta.append(np.deg2rad(joint_angle.value))
+            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
 
+    return cur_theta
 
 def main():
     
@@ -110,6 +129,7 @@ def main():
         robot.position_fk()
        
         while controller.running:
+
             # Example: apply velocity command
             velocity = controller.get_velocity_command()
 
