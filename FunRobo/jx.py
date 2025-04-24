@@ -109,29 +109,21 @@ def main():
     with utilities.DeviceConnection.createTcpConnection(args) as router:
         base = BaseClient(router)
         move_to_home_position(base)
-        joint_angles = base.GetMeasuredJointAngles()
-
-        
-        #print(joint_angles.joint_angles)
-        
-        # defines empty list for current theta values
-        cur_theta = []
-        # goes through the weird data structure and grabs each joint angle iteratively and appends to list
-        for joint_angle in joint_angles.joint_angles:
-            cur_theta.append(np.deg2rad(joint_angle.value))
-            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
-        
-        # robot angles = current theta values just assigned
-        robot.t = cur_theta
-        print("robot.t", robot.t)
 
         # calculate where the robot actually is 
         robot.position_fk()
        
         while controller.running:
+            # get current joint angles
+            joint_angles = base.GetMeasuredJointAngles()
+            robot.theta = base_to_robot_theta(joint_angles)
 
             # Example: apply velocity command
             velocity = controller.get_velocity_command()
+
+            if velocity is not None:
+                # 1/40 is from 40hz refresh of high level control
+                robot.velocity_fk(velocity, 1/40)
 
             # TODO: Create and send velocity command here using `velocity` and `base`
             time.sleep(0.1)  # small delay to avoid flooding
