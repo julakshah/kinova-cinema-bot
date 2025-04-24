@@ -200,7 +200,7 @@ def dh_to_h(dh_i: list):
     al, a, d, t = dh_i[0], dh_i[1], dh_i[2], dh_i[3]
     T = np.array([
         [np.cos(t), -1 * np.cos(al) * np.sin(t), np.sin(al) * np.sin(t), a * np.cos(t)],
-        [np.sin(t), np.cos(al) * np.cos(t), -1 * np.cos(t) * np.sin(al), a],
+        [np.sin(t), np.cos(al) * np.cos(t), -1 * np.cos(t) * np.sin(al), a * np.sin(t)],
         [0, np.sin(al), np.cos(al), d],
         [0, 0, 0, 1]
     ])
