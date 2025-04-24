@@ -71,6 +71,8 @@ def move_to_home_position(base):
 
     base.Unsubscribe(notification_handle)
 
+
+
 def main():
     
     # Import the utilities helper module
