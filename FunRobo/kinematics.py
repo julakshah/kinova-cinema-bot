@@ -93,6 +93,9 @@ class Gen3LiteKinematics:
     def calc_robot_points(self):
         """Calculates the main arm points using the current joint angles"""
 
+        
+        print("self.t", np.round(self.T,2))
+        
         # Initialize points[0] to the base (origin)
         self.points[0] = np.array([0, 0, 0, 1])
 
@@ -102,7 +105,7 @@ class Gen3LiteKinematics:
             T_cumulative.append(T_cumulative[-1] @ self.T[i])
 
         # Calculate the robot points by applying the cumulative transformations
-        for i in range(1, self.ndof+1): # not sure fi this is correct
+        for i in range(1, self.ndof+1): # not sure if this is correct
             self.points[i] = T_cumulative[i] @ self.points[0]
 
         # Calculate EE position and rotation
@@ -121,7 +124,7 @@ class Gen3LiteKinematics:
         # Calculate the EE axes in space (in the base frame)
         self.EE = [self.ee.x, self.ee.y, self.ee.z]
         # print(f"{self.points=}")
-        print("self.ee", self.EE)
+        print("self.ee", np.round(self.EE,2))
         self.EE_axes = np.array(
             [self.T_ee[:3, i] * 0.075 + self.points[-1][:3] for i in range(3)]
         )
