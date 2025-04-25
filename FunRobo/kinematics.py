@@ -42,11 +42,13 @@ class Gen3LiteKinematics:
             T_cumulative.append(T_cumulative[-1] @ Ti)
         
         # compute difference in joint and EE position (r)
-        J = np.zeros(3, self.ndof)
+
+        J = np.zeros((3, self.ndof))
         for i in range(self.ndof):
             r = (T_cumulative[i] - T_cumulative[-1]) @ np.array([0, 0, 0, 1])
             z = T_cumulative[i][:3, :3] @ np.array([0, 0, 1])
-            J[:, i] = np.cross(z, r)
+
+            J[:, i] = np.cross(z, r[:3])
 
         return J # the linear velo component of Jacobian
     
@@ -59,10 +61,10 @@ class Gen3LiteKinematics:
 
     def damped_inv_jacobian(self, damping_factor=0.25):
         """define the damped inverse jacobian for current dh"""
-        if q is not None:
-            J = self.jacobian(q)
-        else:
-            J = self.jacobian()
+        # if q is not None:
+        #     J = self.jacobian(q)
+        # else:
+        J = self.jacobian()
 
         JT = np.transpose(J)
         I = np.eye(3)
@@ -88,14 +90,18 @@ class Gen3LiteKinematics:
                     veloctiy (m/s)
             del_time: a float of time elapsed per loop in seconds  
         """
-
         if all(th == 0.0 for th in self.theta):
             self.theta = [0.0 + np.random.rand() * .001 for _ in range(self.theta)]
-            
+
         vel = np.array(desired_vel)
+        print("Jacobian: q", self.jacobian())
+
         J = self.damped_inv_jacobian()
+        print("got here")
 
         theta_dot = J @ vel
+        
+        print(f"theta dot is {theta_dot}")
 
         # consider making this list comprehension
         for i, ang_vel in enumerate(theta_dot):
@@ -107,6 +113,7 @@ class Gen3LiteKinematics:
         for i in range(self.ndof):
             self.theta[i] = self.theta[i] + (theta_dot[i] * del_time)
         
+        return self.theta
         # potential different implementation with theta_dot return
         # return theta_dot
 

@@ -48,7 +48,7 @@ def move_to_home_position(base):
     action.application_data = ""
 
     # target_angles = [0,0,0,0,0,0]
-    target_angles = [10,20,30,40,50,60]
+    target_angles = [0,0,0,90,0,0]
 
     for i, angle in enumerate(target_angles):
         joint_angle = action.reach_joint_angles.joint_angles.joint_angles.add()
@@ -64,11 +64,18 @@ def move_to_home_position(base):
         check_for_end_or_abort(e),
         Base_pb2.NotificationOptions()
     )
+    
+ 
 
     base.ExecuteAction(action)
 
     e.wait()
-
+    measured_angles = base.GetMeasuredJointAngles()
+    theta_list = base_to_robot_theta(measured_angles)
+    
+    print("Robot joint angles after moving to home:")
+    for idx, theta in enumerate(theta_list):
+        print(f"Joint {idx + 1}: {np.rad2deg(theta):.2f} degrees")
     base.Unsubscribe(notification_handle)
 
 def base_to_robot_theta(base_dict):
@@ -88,9 +95,51 @@ def base_to_robot_theta(base_dict):
     # goes through the weird data structure and grabs each joint angle iteratively and appends to list
     for joint_angle in base_dict.joint_angles:
             cur_theta.append(np.deg2rad(joint_angle.value))
-            print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
+            # print(f"Joint {joint_angle.joint_identifier}: {joint_angle.value:.2f} degrees")
 
     return cur_theta
+
+
+def move_to_angle(base, angles):
+    # Make sure the arm is in Single Level Servoing mode
+    base_servo_mode = Base_pb2.ServoingModeInformation()
+    base_servo_mode.servoing_mode = Base_pb2.SINGLE_LEVEL_SERVOING
+    base.SetServoingMode(base_servo_mode)
+    
+    # Move arm to ready position
+    action_type = Base_pb2.RequestedActionType()
+    action_type.action_type = Base_pb2.REACH_JOINT_ANGLES
+    # action_list = base.ReadAllActions(action_type)
+    action_handle = None
+
+    # Create the action message
+    action = Base_pb2.Action()
+    action.name = "Custom joint angles"
+    action.application_data = ""
+
+    target_angles = angles
+    target_angles_deg = [np.rad2deg(a) for a in target_angles]
+    print("Sending target angles (deg):", [f"{a:.2f}" for a in target_angles_deg])
+    for i, angle in enumerate(target_angles_deg):
+        joint_angle = action.reach_joint_angles.joint_angles.joint_angles.add()
+        joint_angle.joint_identifier = i + 1
+        joint_angle.value = angle  # correct field name
+
+    # if action_handle == None:
+    #     print("Can't reach safe position. Exiting")
+    #     sys.exit(1)
+
+    e = threading.Event()
+    notification_handle = base.OnNotificationActionTopic(
+        check_for_end_or_abort(e),
+        Base_pb2.NotificationOptions()
+    )
+
+    base.ExecuteAction(action)
+
+    e.wait()
+
+    base.Unsubscribe(notification_handle)
 
 def main():
     
@@ -120,10 +169,13 @@ def main():
 
             # Example: apply velocity command
             velocity = controller.get_velocity_command()
-
-            if velocity is not None:
+            if velocity != [0, 0, 0]:
                 # 1/40 is from 40hz refresh of high level control
-                robot.velocity_fk(velocity, 1/40)
+                angles = robot.velocity_fk(velocity, 1)
+                move_to_angle(base, angles)
+                
+                
+            # print(f"robot joints are: {robot.theta}")
 
             # TODO: Create and send velocity command here using `velocity` and `base`
             time.sleep(0.1)  # small delay to avoid flooding
@@ -158,9 +210,9 @@ class TeleopController:
             elif key == keyboard.Key.right:
                 self.v[0] = 1
             elif key.char == 'w':
-                self.v[2] = 1
-            elif key.char == 's':
                 self.v[2] = -1
+            elif key.char == 's':
+                self.v[2] = 1
             elif key.char == 'q':  # exit on 'q'
                 self.running = False
         except AttributeError:
@@ -179,7 +231,7 @@ class TeleopController:
     
     def get_velocity_command(self):
         # convert self.v to your robot's expected format (e.g., Base_pb2.TwistCommand)
-        print(f"Velocity: {self.v}")  # replace with command to robot
+        # print(f"Velocity: {self.v}")  # replace with command to robot
         return self.v
 
 
