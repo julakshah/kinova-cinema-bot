@@ -19,6 +19,17 @@ class Gen3LiteKinematics:
             [np.pi / 2, 0, (28.5 + 28.5), self.theta[4] + np.pi],
             [0, 0, (105 + 130), self.theta[5] + np.pi / 2]
         ]
+        
+        # Radians
+        self.joint_limits = [
+            (-2.689, 2.689),
+            (-2.621, 2.621),
+            (-2.621, 2.621),
+            (-2.600, 2.600),
+            (-2.531, 2.530),
+            (-2.600, 2.600)
+        ]
+
         self.ndof = 6
         self.ee = EndEffector()
         self.points = [None] * (self.ndof + 1)
@@ -52,7 +63,7 @@ class Gen3LiteKinematics:
 
         return J # the linear velo component of Jacobian
     
-    def inv_jacobian(self, J, pseudo=False):
+    def vinv_jacobian(self, J, pseudo=False):
         """define the inverse jacobian for current dh"""
 
         if pseudo:
@@ -161,6 +172,60 @@ class Gen3LiteKinematics:
         self.EE_axes = np.array(
             [self.T_ee[:3, i] * 0.075 + self.points[-1][:3] for i in range(3)]
         )
+     
+
+    def calc_ik_kinematics(self, des_pos: list, tol=0.01, ilimit=50):
+        """
+        Numerically solve for joint angles for a desired EE position.
+        """
+        des_pos = np.array(des_pos)
+        max_step = 0.1
+
+        for i in range(ilimit):
+            self.update_dh()
+            self.position_fk()
+
+            pos_current = np.array([self.ee.x, self.ee.y, self.ee.z])
+            error = des_pos - pos_current
+
+            print(f"[{i}] self.ee", pos_current)
+
+            if np.linalg.norm(error) < tol:
+                print("Converged!")
+                break
+
+            J_inv = self.damped_inv_jacobian()  # More stable than pseudoinverse
+            delta_theta = J_inv @ error
+
+            # Clamp the step to avoid overshooting
+            delta_theta = np.clip(delta_theta, -max_step, max_step)
+
+           # Update joint angles
+            self.theta = [self.theta[j] + delta_theta[j] for j in range(self.ndof)]
+
+            # Enforce hardware joint limits
+            for j in range(self.ndof):
+                lower, upper = self.joint_limits[j]
+                self.theta[j] = np.clip(self.theta[j], lower, upper)
+
+
+        return self.theta
+
+    def update_dh(self):
+        """Updates DH table with current theta values"""
+        self.dh = [ 
+            [np.pi / 2, 0, (128.3 + 115), self.theta[0]],
+            [np.pi, 280, 30, self.theta[1] + np.pi / 2],
+            [np.pi / 2, 0, 20, self.theta[2] + np.pi / 2],
+            [np.pi / 2, 0, (140 + 105), self.theta[3] + np.pi / 2],
+            [np.pi / 2, 0, (28.5 + 28.5), self.theta[4] + np.pi],
+            [0, 0, (105 + 130), self.theta[5] + np.pi / 2]
+        ]
+        
+        
+        
+        
+        
         
         
 
@@ -221,23 +286,3 @@ class EndEffector:
     rotx: float = 0.0
     roty: float = 0.0
     rotz: float = 0.0
-    
-def calc_ik_kinematics(EE: EndEffector, tol=.01, ilimit = 50):
-    
-    des_pos = [EE.x, EE.y, EE.z]
-    # cur_pos =  # get end effector position
-    error = pos_des - cur_pos
-    
-    # make sure that the loop doesn't run forever by defining iteration limit
-    for _ in range(ilimit):
-            # solve for error
-            pos_current = self.solve_forward_kinematics(self.theta)
-            error = pos_des - pos_current[0:3]
-            # If error outside tol, recalculate theta (Newton-Raphson)
-            if np.linalg.norm(error) > tol:
-                self.theta = self.theta + np.dot(
-                    self.inverse_jacobian(pseudo=True), error
-                )
-            # If error is within tolerence: break
-            else:
-                break

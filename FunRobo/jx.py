@@ -167,6 +167,15 @@ def main():
             joint_angles = base.GetMeasuredJointAngles()
             robot.theta = base_to_robot_theta(joint_angles)
 
+            if controller.target_ik is not None:
+                print("Running numerical IK kinematics...")
+                angles = robot.calc_ik_kinematics(controller.target_ik, tol=0.01, ilimit=50)
+                move_to_angle(base, angles)
+                # Reset the target after processing
+                controller.target_ik = None
+                robot.position_fk()
+
+
             # Example: apply velocity command
             velocity = controller.get_velocity_command()
             if velocity != [0, 0, 0]:
@@ -198,6 +207,8 @@ class TeleopController:
         self.running = True
         self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
         self.listener.start()
+        self.running = True
+        self.target_ik = None  # New: store IK target when 'v' is pressed
 
     def on_press(self, key):
         try:
@@ -215,6 +226,9 @@ class TeleopController:
                 self.v[2] = 1
             elif key.char == 'q':  # exit on 'q'
                 self.running = False
+            elif key.char == 'v':
+                self.target_ik = [450, 200, 450]
+                print("IK target set to [450, 200, 450]") # similar to home position of bot normally
         except AttributeError:
             pass
 
