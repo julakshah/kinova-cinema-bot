@@ -1,6 +1,7 @@
 """ module to contain all kinematics code for gen3_lite robot"""
 
 import numpy as np
+import time
 import math
 
 class Gen3LiteKinematics:
@@ -11,13 +12,14 @@ class Gen3LiteKinematics:
         self.theta = [0, 0, 0, 0, 0, 0]
 
         # DH parameters for gen3_lite robot arm
+        # Order: alpha, a, d, theta
         self.dh = [ 
-            [np.pi / 2, 0, (128.3 + 115), self.theta[0]],
-            [np.pi, 280, 30, self.theta[1] + np.pi / 2],
-            [np.pi /2, 0, 20, self.theta[2] + np.pi / 2],
-            [np.pi / 2, 0, (140 + 105), self.theta[3] + np.pi / 2],
-            [np.pi / 2, 0, (28.5 + 28.5), self.theta[4] + np.pi],
-            [0, 0, (105 + 130), self.theta[5] + np.pi / 2]
+            [np.pi / 2, 0, (0.1283 + 0.115), self.theta[0]],
+            [np.pi, 0.280, 0.030, self.theta[1] + (np.pi / 2)],
+            [np.pi / 2, 0, 0.020, self.theta[2] + (np.pi / 2)],
+            [np.pi / 2, 0, (0.140 + 0.105), self.theta[3] + (np.pi / 2)],
+            [np.pi / 2, 0, (0.0285 + 0.0285), self.theta[4] + np.pi],
+            [0, 0, (0.105 + 0.130), self.theta[5] + (np.pi / 2)]
         ]
         
         # Radians
@@ -35,6 +37,7 @@ class Gen3LiteKinematics:
         self.points = [None] * (self.ndof + 1)
         self.T = np.zeros((self.ndof, 4, 4))
         self.calc_robot_points()
+        self.last_time = time.time()
         
         
 
@@ -46,9 +49,18 @@ class Gen3LiteKinematics:
         the cartesian movement of a point in relation to it's center about it's
         axis of rotation.
         """
+
+        dh = [ 
+            [np.pi / 2, 0, (0.1283 + 0.115), self.theta[0]],
+            [np.pi, 0.280, 0.030, self.theta[1] + (np.pi / 2)],
+            [np.pi / 2, 0, 0.020, self.theta[2] + (np.pi / 2)],
+            [np.pi / 2, 0, (0.140 + 0.105), self.theta[3] + (np.pi / 2)],
+            [np.pi / 2, 0, (0.0285 + 0.0285), self.theta[4] + np.pi],
+            [0, 0, (0.105 + 0.130), self.theta[5] + (np.pi / 2)]
+        ]
         # compute the cumulative transformation
         T_cumulative = [np.eye(4)]
-        for i, row in enumerate(self.dh):
+        for i, row in enumerate(dh):
             Ti = dh_to_h(row)
             T_cumulative.append(T_cumulative[-1] @ Ti)
         
@@ -70,11 +82,9 @@ class Gen3LiteKinematics:
             return np.linalg.pinv(J)
         return np.linalg.inv(J)
 
-    def damped_inv_jacobian(self, damping_factor=0.25):
+    def damped_inv_jacobian(self, damping_factor=1):
         """define the damped inverse jacobian for current dh"""
-        # if q is not None:
-        #     J = self.jacobian(q)
-        # else:
+
         J = self.jacobian()
 
         JT = np.transpose(J)
@@ -92,41 +102,47 @@ class Gen3LiteKinematics:
 
      
 
-    def velocity_fk(self, desired_vel, del_time):
+    def velocity_fk(self, desired_vel):
         """
         move in cartesion coordinates by desired velocity
         
         Args:
             desired_vel: a list of floats giving the magnitude of desired
                     veloctiy (m/s)
-            del_time: a float of time elapsed per loop in seconds  
         """
+        time
+
         if all(th == 0.0 for th in self.theta):
             self.theta = [0.0 + np.random.rand() * .001 for _ in range(self.theta)]
 
         vel = np.array(desired_vel)
-        print("Jacobian: q", self.jacobian())
-
+        # print(f"desired vel: {vel}")
         J = self.damped_inv_jacobian()
-        print("got here")
-
+        # print(f"J is {J}")
         theta_dot = J @ vel
-        
-        print(f"theta dot is {theta_dot}")
+        # print(f"theta dot is {theta_dot}")
 
         # consider making this list comprehension
         for i, ang_vel in enumerate(theta_dot):
             # make sure it doesn't try
             # over max velocity of 1 rad/s
             if ang_vel > 1:
+                print("reducing velocity to one rad/s")
                 theta_dot[i] = 1
 
         for i in range(self.ndof):
-            self.theta[i] = self.theta[i] + (theta_dot[i] * del_time)
+            self.theta[i] += .05 * theta_dot[i]
         
         return self.theta
         # potential different implementation with theta_dot return
         # return theta_dot
+
+
+    def check_dh_conversion(self):
+        for i, row in enumerate(self.dh):
+            print(f"row is {row}")
+            Ti = dh_to_h(row)
+            print(f"transform {i} is: {Ti}")
 
 
     def analytical_ik(self): 
@@ -223,9 +239,7 @@ class Gen3LiteKinematics:
         ]
         
         
-        
-        
-        
+
         
         
 
@@ -256,24 +270,24 @@ def rotm_to_euler(R) -> tuple:
     elif r31 == 1:
         # pitch is close to -90 deg, i.e. cos(pitch) = 0.0
         # there are an infinitely many solutions, so we choose one possible solution where yaw = 0
-        pitch, yaw = -PI/2, 0.0
+        pitch, yaw = -np.pi/2, 0.0
         roll = -math.atan2(r12, r22)
     
     elif r31 == -1:
         # pitch is close to 90 deg, i.e. cos(pitch) = 0.0
         # there are an infinitely many solutions, so we choose one possible solution where yaw = 0
-        pitch, yaw = PI/2, 0.0
+        pitch, yaw =np.pi/2, 0.0
         roll = math.atan2(r12, r22)
         
 
     return roll, pitch, yaw
 
 def dh_to_h(dh_i: list):
-    al, a, d, t = dh_i[0], dh_i[1], dh_i[2], dh_i[3]
+    alpha, a, d, theta = dh_i[0], dh_i[1], dh_i[2], dh_i[3]
     T = np.array([
-        [np.cos(t), -1 * np.cos(al) * np.sin(t), np.sin(al) * np.sin(t), a * np.cos(t)],
-        [np.sin(t), np.cos(al) * np.cos(t), -1 * np.cos(t) * np.sin(al), a * np.sin(t)],
-        [0, np.sin(al), np.cos(al), d],
+        [np.cos(theta), -1 * np.cos(alpha) * np.sin(theta), np.sin(alpha) * np.sin(theta), a * np.cos(theta)],
+        [np.sin(theta), np.cos(alpha) * np.cos(theta), -1 * np.sin(alpha) * np.cos(theta), a * np.sin(theta)],
+        [0, np.sin(alpha), np.cos(alpha), d],
         [0, 0, 0, 1]
     ])
     return T
@@ -286,3 +300,23 @@ class EndEffector:
     rotx: float = 0.0
     roty: float = 0.0
     rotz: float = 0.0
+    
+def calc_ik_kinematics(self, EE: EndEffector, tol=.01, ilimit = 50):
+    
+    des_pos = [EE.x, EE.y, EE.z]
+    # cur_pos =  # get end effector position
+    # error = des_pos - cur_pos
+    
+    # make sure that the loop doesn't run forever by defining iteration limit
+    # for _ in range(ilimit):
+    #         # solve for error
+    #         pos_current = self.solve_forward_kinematics(self.theta)
+    #         error = pos_des - pos_current[0:3]
+    #         # If error outside tol, recalculate theta (Newton-Raphson)
+    #         if np.linalg.norm(error) > tol:
+    #             self.theta = self.theta + np.dot(
+    #                 self.inverse_jacobian(pseudo=True), error
+    #             )
+    #         # If error is within tolerence: break
+    #         else:
+    #             break

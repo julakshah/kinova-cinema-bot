@@ -22,8 +22,8 @@ def check_for_end_or_abort(e):
                 (will be set to True when an END or ABORT occurs)
     """
     def check(notification, e = e):
-        print("EVENT : " + \
-              Base_pb2.ActionEvent.Name(notification.action_event))
+        #print("EVENT : " + \
+        #      Base_pb2.ActionEvent.Name(notification.action_event))
         if notification.action_event == Base_pb2.ACTION_END \
         or notification.action_event == Base_pb2.ACTION_ABORT:
             e.set()
@@ -48,7 +48,7 @@ def move_to_home_position(base):
     action.application_data = ""
 
     # target_angles = [0,0,0,0,0,0]
-    target_angles = [0,0,0,90,0,0]
+    target_angles = [0,345,75,0,300,0]
 
     for i, angle in enumerate(target_angles):
         joint_angle = action.reach_joint_angles.joint_angles.joint_angles.add()
@@ -152,6 +152,7 @@ def main():
     # Instantiate the classes for our kinematics and controller
     controller = TeleopController()
     robot = kinematics.Gen3LiteKinematics()
+    # robot.check_dh_conversion()
     
     print(robot.ee)
     # Connect to robot
@@ -161,9 +162,14 @@ def main():
 
         # calculate where the robot actually is 
         robot.position_fk()
-       
+        iteration = 0
+
         while controller.running:
+            
             # get current joint angles
+            print(iteration)
+            robot.check_dh_conversion()
+            iteration = iteration + 1
             joint_angles = base.GetMeasuredJointAngles()
             robot.theta = base_to_robot_theta(joint_angles)
 
@@ -180,7 +186,7 @@ def main():
             velocity = controller.get_velocity_command()
             if velocity != [0, 0, 0]:
                 # 1/40 is from 40hz refresh of high level control
-                angles = robot.velocity_fk(velocity, 1)
+                angles = robot.velocity_fk(velocity)
                 move_to_angle(base, angles)
                 
                 
