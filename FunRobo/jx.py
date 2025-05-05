@@ -168,7 +168,6 @@ def main():
             
             # get current joint angles
             print(iteration)
-            robot.check_dh_conversion()
             iteration = iteration + 1
             joint_angles = base.GetMeasuredJointAngles()
             robot.theta = base_to_robot_theta(joint_angles)
@@ -193,7 +192,7 @@ def main():
             # print(f"robot joints are: {robot.theta}")
 
             # TODO: Create and send velocity command here using `velocity` and `base`
-            time.sleep(0.1)  # small delay to avoid flooding
+            time.sleep(0.025)  # small delay to avoid flooding
 
         print("Teleop ended.")
 
@@ -233,7 +232,7 @@ class TeleopController:
             elif key.char == 'q':  # exit on 'q'
                 self.running = False
             elif key.char == 'v':
-                self.target_ik = [450, 200, 450]
+                self.target_ik = [-500, -500, -500]
                 print("IK target set to [450, 200, 450]") # similar to home position of bot normally
         except AttributeError:
             pass

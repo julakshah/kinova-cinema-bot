@@ -69,20 +69,22 @@ class Gen3LiteKinematics:
         J = np.zeros((3, self.ndof))
         for i in range(self.ndof):
             r = (T_cumulative[i] - T_cumulative[-1]) @ np.array([0, 0, 0, 1])
+            print(f"r is: {r}")
             z = T_cumulative[i][:3, :3] @ np.array([0, 0, 1])
+            print(f"z is: {z}")
 
             J[:, i] = np.cross(z, r[:3])
 
         return J # the linear velo component of Jacobian
     
-    def vinv_jacobian(self, J, pseudo=False):
+    def inv_jacobian(self, J, pseudo=False):
         """define the inverse jacobian for current dh"""
 
         if pseudo:
             return np.linalg.pinv(J)
         return np.linalg.inv(J)
 
-    def damped_inv_jacobian(self, damping_factor=1):
+    def damped_inv_jacobian(self, damping_factor=2):
         """define the damped inverse jacobian for current dh"""
 
         J = self.jacobian()
@@ -131,7 +133,7 @@ class Gen3LiteKinematics:
                 theta_dot[i] = 1
 
         for i in range(self.ndof):
-            self.theta[i] += .05 * theta_dot[i]
+            self.theta[i] += .2 * theta_dot[i]
         
         return self.theta
         # potential different implementation with theta_dot return
