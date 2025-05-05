@@ -9,7 +9,7 @@ from arm_models import Robot
 from helper_fcns.utils import EndEffector
 import time
 from pynput import keyboard
-#import yaml
+import yaml
 
 
 class Visualizer:
