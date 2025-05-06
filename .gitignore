@@ -1,1 +1,7 @@
-api_python/*
+
+api_python/data.tar.xz
+api_python/control.tar.xz
+api_python/kortex_api-2.6.0.post3-py3-none-any.whl
+api_python/debian-binary
+api_python/doc/*
+FunRobo/__pycache__/
