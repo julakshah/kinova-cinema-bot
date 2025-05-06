@@ -363,12 +363,13 @@ class SixDOFRobot:
             for i, th in enumerate(self.theta)
         ]
 
-        self.DH[0] = [self.theta[0], (128.3 + 115.0) / 1000, 0.0, np.pi / 2]
-        self.DH[1] = [self.theta[1] + np.pi / 2, 30.0 / 1000, 280.0 / 1000, np.pi]
-        self.DH[2] = [self.theta[2] + np.pi / 2, 20.0 / 1000, 0.0, np.pi / 2]
-        self.DH[3] = [self.theta[3] + np.pi / 2, (140.0 + 105.0) / 1000, 0.0, np.pi / 2]
-        self.DH[4] = [self.theta[4] + np.pi, (28.5 + 28.5) / 1000, 0.0, np.pi / 2]
-        self.DH[5] = [self.theta[5] + np.pi / 2, (105.0 + 130.0) / 1000, 0.0, 0.0]
+        # Define DH Table
+        self.DH[0] = [self.theta[0], self.l1, 0.0, np.pi / 2]
+        self.DH[1] = [self.theta[1] + np.pi / 2, self.l2, self.l3, np.pi]
+        self.DH[2] = [self.theta[2] + np.pi / 2, self.l4, 0.0, np.pi / 2]
+        self.DH[3] = [self.theta[3] + np.pi / 2, self.l5, 0.0, np.pi / 2]
+        self.DH[4] = [self.theta[4] + np.pi, self.l6, 0.0, np.pi / 2]
+        self.DH[5] = [self.theta[5] + np.pi / 2, self.l7, 0.0, 0.0]
 
         # Compute the transformation matrices
         for i in range(self.num_dof):
@@ -376,103 +377,6 @@ class SixDOFRobot:
 
         # Calculate robot points (positions of joints)
         self.calc_robot_points()
-
-    def calc_inverse_kinematics(self, EE: EndEffector, soln=0):
-        """
-        Calculate inverse kinematics to determine the joint angles based on end-effector position.
-
-        Args:
-            EE: EndEffector object containing desired position and orientation.
-            soln: Optional parameter for multiple solutions (not implemented).
-        """
-        # Extract position and orientation of the end-effector
-        l1, l2, l3, l4, l5 = self.l1, self.l2, self.l3, self.l4, self.l5
-
-        # Desired position and rotation matrix
-        p = np.array([EE.x, EE.y, EE.z])
-        rpy = np.array([EE.rotx, EE.roty, EE.rotz])
-        R = euler_to_rotm(rpy)
-
-        # Calculate wrist position
-        wrist_pos = p - R @ np.array([0, 0, 1]) * (l4 + l5)
-        # print(f"Wrist pose: \n {wrist_pos} \n")
-        # print(f"Rotation matrix, R: {R}, \n Determinant: {np.linalg.det(R)}")
-
-        try:
-            # Solve for theta_1 using trigonometry
-            x_wrist, y_wrist, z_wrist = wrist_pos
-            theta1 = [atan2(y_wrist, x_wrist), wraptopi(atan2(y_wrist, x_wrist) + PI)]
-            # TIP #1: the wraptopi ensures that the values stays within -pi to pi
-
-            # using cosine rule, find theta_3
-            s = z_wrist - l1
-            r = [-sqrt(x_wrist**2 + y_wrist**2), sqrt(x_wrist**2 + y_wrist**2)]
-            # TIP #2: consider two cases for r (+ve and -ve)
-            L = sqrt(r[0] ** 2 + s**2)
-            ctheta3 = (L**2 - l2**2 - l3**2) / (2 * l2 * l3)
-            theta3 = [
-                atan2(sqrt(1 - ctheta3**2), ctheta3),
-                atan2(-sqrt(1 - ctheta3**2), ctheta3),
-            ]
-            # TIP #3: Alternative approach to finding theta3
-            # beta = np.arccos((-L**2 + l2**2 + l3**2) / (2 * l2 * l3))
-            # theta3 = [pi - beta, beta - pi]
-
-            possible_solns, valid_solns = [], []
-
-            for th3 in theta3:
-                # calculate theta2
-                theta2 = [
-                    atan2(r[0], s) - atan2(l3 * sin(-th3), l2 + l3 * cos(-th3)),
-                    atan2(r[1], s) - atan2(l3 * sin(-th3), l2 + l3 * cos(-th3)),
-                ]
-                # TIP #4: We set theta3 to -ve because it's moving in the opposite direction to theta2
-
-                # calculate theta4 and theta5
-                for th2 in theta2:
-                    c23_ = cos(th2) * cos(th3) + sin(th2) * sin(th3)
-                    s23_ = sin(th2) * cos(th3) - cos(th2) * sin(th3)
-
-                    for th1 in theta1:
-                        c1, s1 = cos(th1), sin(th1)
-                        R0_3 = np.array(
-                            [
-                                [-c1 * s23_, -c1 * c23_, s1],
-                                [-s1 * s23_, -s1 * c23_, -c1],
-                                [c23_, -s23_, 0],
-                            ]
-                        )
-                        # TIP #5 This is derived from calculating R3_4*R4_5 from the DH table
-                        R3_5 = R0_3.T @ R
-
-                        th4 = atan2(R3_5[1, 2], R3_5[0, 2])
-                        th5 = atan2(-R3_5[2, 0], -R3_5[2, 1])
-
-                        solution = [th1, th2, th3, th4, th5]
-                        possible_solns.append(solution)
-                        if self.check_valid_ik_soln(solution, EE):
-                            valid_solns.append(solution)
-
-            if len(valid_solns) > 0:
-                if soln == 0:
-                    self.theta = valid_solns[0]
-                elif soln == 1:
-                    self.theta = valid_solns[1]
-
-                # Calculate forward kinematics with the new joint angles
-                self.calc_forward_kinematics(self.theta, radians=True)
-
-                return True
-
-            else:
-                print(
-                    f"\n[Analytical IK solver] ERROR: No valid solution found! Joint limits may be exceeded or position may be unreachable."
-                )
-                # raise ValueError
-                return False
-
-        except RuntimeWarning:
-            print("\n [ERROR] (Runtime) Joint limits exceeded! \n")
 
     def calc_numerical_ik(self, EE: EndEffector, tol=0.01, ilimit=100):
         """
@@ -553,12 +457,12 @@ class SixDOFRobot:
         # Define DH parameters
         DH = np.zeros((6, 4))
 
-        DH[0] = [self.theta[0], (128.3 + 115.0) / 1000, 0.0, np.pi / 2]
-        DH[1] = [self.theta[1] + np.pi / 2, 30.0 / 1000, 280.0 / 1000, np.pi]
-        DH[2] = [self.theta[2] + np.pi / 2, 20.0 / 1000, 0.0, np.pi / 2]
-        DH[3] = [self.theta[3] + np.pi / 2, (140.0 + 105.0) / 1000, 0.0, np.pi / 2]
-        DH[4] = [self.theta[4] + np.pi, (28.5 + 28.5) / 1000, 0.0, np.pi / 2]
-        DH[5] = [self.theta[5] + np.pi / 2, (105.0 + 130.0) / 1000, 0.0, 0.0]
+        DH[0] = [self.theta[0], self.l1, 0.0, np.pi / 2]
+        DH[1] = [self.theta[1] + np.pi / 2, self.l2, self.l3, np.pi]
+        DH[2] = [self.theta[2] + np.pi / 2, self.l4, 0.0, np.pi / 2]
+        DH[3] = [self.theta[3] + np.pi / 2, self.l5, 0.0, np.pi / 2]
+        DH[4] = [self.theta[4] + np.pi, self.l6, 0.0, np.pi / 2]
+        DH[5] = [self.theta[5] + np.pi / 2, self.l7, 0.0, 0.0]
 
         # Compute transformation matrices
         T = np.zeros((self.num_dof, 4, 4))
@@ -605,7 +509,6 @@ class SixDOFRobot:
 
         J = self.jacobian()
         JT = np.transpose(J)
-        manipulability_idx = np.sqrt(np.linalg.det(J @ JT))
 
         if pseudo:
             return np.linalg.pinv(self.jacobian())
@@ -658,12 +561,12 @@ class SixDOFRobot:
 
         # DH parameters = [theta, d, a, alpha]
         DH = np.zeros((6, 4))
-        DH[0] = [theta[0], (128.3 + 115.0) / 1000, 0.0, np.pi / 2]
-        DH[1] = [theta[1] + np.pi / 2, 30.0 / 1000, 280.0 / 1000, np.pi]
-        DH[2] = [theta[2] + np.pi / 2, 20.0 / 1000, 0.0, np.pi / 2]
-        DH[3] = [theta[3] + np.pi / 2, (140.0 + 105.0) / 1000, 0.0, np.pi / 2]
-        DH[4] = [theta[4] + np.pi, (28.5 + 28.5) / 1000, 0.0, np.pi / 2]
-        DH[5] = [theta[5] + np.pi / 2, (105.0 + 130.0) / 1000, 0.0, 0.0]
+        DH[0] = [theta[0], self.l1, 0.0, np.pi / 2]
+        DH[1] = [theta[1] + np.pi / 2, self.l2, self.l3, np.pi]
+        DH[2] = [theta[2] + np.pi / 2, self.l4, 0.0, np.pi / 2]
+        DH[3] = [theta[3] + np.pi / 2, self.l5, 0.0, np.pi / 2]
+        DH[4] = [theta[4] + np.pi, self.l6, 0.0, np.pi / 2]
+        DH[5] = [theta[5] + np.pi / 2, self.l7, 0.0, 0.0]
 
         T = np.zeros((self.num_dof, 4, 4))
         for i in range(self.num_dof):
