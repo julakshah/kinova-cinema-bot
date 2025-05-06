@@ -1,0 +1,978 @@
+[0.135s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/xavier/kinova-cinema-bot']
+[0.136s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/xavier/kinova-cinema-bot'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x745b2b5b3cd0>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x745b2b5b2cb0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x745b2b5b2cb0>>, mixin_verb=('list',))
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.189s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/xavier/kinova-cinema-bot'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extensions ['ignore', 'ignore_ament_install']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'ignore'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'ignore_ament_install'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extensions ['colcon_pkg']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'colcon_pkg'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extensions ['colcon_meta']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'colcon_meta'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extensions ['ros']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'ros'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extensions ['cmake', 'python']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'cmake'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'python'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extensions ['python_setup_py']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot) by extension 'python_setup_py'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extensions ['ignore', 'ignore_ament_install']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'ignore'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'ignore_ament_install'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extensions ['colcon_pkg']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'colcon_pkg'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extensions ['colcon_meta']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'colcon_meta'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extensions ['ros']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'ros'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extensions ['cmake', 'python']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'cmake'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'python'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extensions ['python_setup_py']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo) by extension 'python_setup_py'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'ignore'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'ignore_ament_install'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extensions ['colcon_pkg']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'colcon_pkg'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extensions ['colcon_meta']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'colcon_meta'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extensions ['ros']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'ros'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extensions ['cmake', 'python']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'cmake'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'python'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extensions ['python_setup_py']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/FunRobo/__pycache__) by extension 'python_setup_py'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extensions ['ignore', 'ignore_ament_install']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'ignore'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'ignore_ament_install'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extensions ['colcon_pkg']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'colcon_pkg'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extensions ['colcon_meta']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'colcon_meta'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extensions ['ros']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'ros'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extensions ['cmake', 'python']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'cmake'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'python'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extensions ['python_setup_py']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python) by extension 'python_setup_py'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extensions ['ignore', 'ignore_ament_install']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'ignore'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'ignore_ament_install'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extensions ['colcon_pkg']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'colcon_pkg'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extensions ['colcon_meta']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'colcon_meta'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extensions ['ros']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'ros'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extensions ['cmake', 'python']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'cmake'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'python'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extensions ['python_setup_py']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc) by extension 'python_setup_py'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'ignore_ament_install'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extensions ['colcon_pkg']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'colcon_pkg'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extensions ['colcon_meta']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'colcon_meta'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extensions ['ros']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'ros'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extensions ['cmake', 'python']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'cmake'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'python'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extensions ['python_setup_py']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown) by extension 'python_setup_py'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'ros'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extensions ['cmake', 'python']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'cmake'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'python'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extensions ['python_setup_py']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums) by extension 'python_setup_py'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'ros'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extensions ['cmake', 'python']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'cmake'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'python'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extensions ['python_setup_py']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorConfig) by extension 'python_setup_py'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'ignore_ament_install'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extensions ['colcon_pkg']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'colcon_pkg'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extensions ['colcon_meta']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'colcon_meta'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extensions ['ros']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'ros'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extensions ['cmake', 'python']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'cmake'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'python'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extensions ['python_setup_py']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ActuatorCyclic) by extension 'python_setup_py'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'colcon_pkg'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extensions ['colcon_meta']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'colcon_meta'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extensions ['ros']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'ros'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extensions ['cmake', 'python']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'cmake'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'python'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extensions ['python_setup_py']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Api) by extension 'python_setup_py'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extensions ['ignore', 'ignore_ament_install']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'colcon_pkg'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extensions ['colcon_meta']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'colcon_meta'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extensions ['ros']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'ros'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extensions ['cmake', 'python']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'cmake'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'python'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extensions ['python_setup_py']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Base) by extension 'python_setup_py'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'ignore'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'ignore_ament_install'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extensions ['colcon_pkg']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'colcon_pkg'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extensions ['colcon_meta']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'colcon_meta'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extensions ['ros']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'ros'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extensions ['cmake', 'python']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'cmake'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'python'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extensions ['python_setup_py']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/BaseCyclic) by extension 'python_setup_py'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extensions ['ignore', 'ignore_ament_install']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'ignore_ament_install'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extensions ['colcon_pkg']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'colcon_pkg'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extensions ['colcon_meta']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'colcon_meta'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extensions ['ros']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'ros'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extensions ['cmake', 'python']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'cmake'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'python'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extensions ['python_setup_py']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Common) by extension 'python_setup_py'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'ignore_ament_install'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extensions ['colcon_pkg']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'colcon_pkg'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extensions ['colcon_meta']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'colcon_meta'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extensions ['ros']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'ros'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extensions ['cmake', 'python']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'cmake'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'python'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extensions ['python_setup_py']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ControlConfig) by extension 'python_setup_py'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'ignore'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'ignore_ament_install'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extensions ['colcon_pkg']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'colcon_pkg'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extensions ['colcon_meta']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'colcon_meta'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extensions ['ros']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'ros'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extensions ['cmake', 'python']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'cmake'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'python'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extensions ['python_setup_py']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceConfig) by extension 'python_setup_py'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extensions ['ignore', 'ignore_ament_install']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'ignore'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'ignore_ament_install'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extensions ['colcon_pkg']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'colcon_pkg'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extensions ['colcon_meta']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'colcon_meta'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extensions ['ros']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'ros'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extensions ['cmake', 'python']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'cmake'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'python'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extensions ['python_setup_py']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/DeviceManager) by extension 'python_setup_py'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'ignore_ament_install'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extensions ['colcon_pkg']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'colcon_pkg'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extensions ['colcon_meta']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'colcon_meta'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extensions ['ros']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'ros'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extensions ['cmake', 'python']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'cmake'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'python'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extensions ['python_setup_py']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperConfig) by extension 'python_setup_py'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'ignore'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'ignore_ament_install'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extensions ['colcon_pkg']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'colcon_pkg'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extensions ['colcon_meta']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'colcon_meta'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extensions ['ros']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'ros'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extensions ['cmake', 'python']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'cmake'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'python'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extensions ['python_setup_py']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/GripperCyclic) by extension 'python_setup_py'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'ignore'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'ignore_ament_install'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extensions ['colcon_pkg']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'colcon_pkg'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extensions ['colcon_meta']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'colcon_meta'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extensions ['ros']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'ros'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extensions ['cmake', 'python']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'cmake'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'python'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extensions ['python_setup_py']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectConfig) by extension 'python_setup_py'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'ignore'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'ignore_ament_install'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extensions ['colcon_pkg']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'colcon_pkg'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extensions ['colcon_meta']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'colcon_meta'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extensions ['ros']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'ros'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extensions ['cmake', 'python']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'cmake'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'python'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extensions ['python_setup_py']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/InterconnectCyclic) by extension 'python_setup_py'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extensions ['ignore', 'ignore_ament_install']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'ignore'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'ignore_ament_install'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extensions ['colcon_pkg']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'colcon_pkg'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extensions ['colcon_meta']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'colcon_meta'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extensions ['ros']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'ros'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extensions ['cmake', 'python']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'cmake'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'python'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extensions ['python_setup_py']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/ProductConfiguration) by extension 'python_setup_py'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extensions ['ignore', 'ignore_ament_install']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'ignore'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'ignore_ament_install'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extensions ['colcon_pkg']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'colcon_pkg'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extensions ['colcon_meta']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'colcon_meta'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extensions ['ros']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'ros'
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extensions ['cmake', 'python']
+[0.220s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'cmake'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'python'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extensions ['python_setup_py']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/Session) by extension 'python_setup_py'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'ignore'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'ignore_ament_install'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extensions ['colcon_pkg']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'colcon_pkg'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extensions ['colcon_meta']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'colcon_meta'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extensions ['ros']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'ros'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extensions ['cmake', 'python']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'cmake'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'python'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extensions ['python_setup_py']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/enums/VisionConfig) by extension 'python_setup_py'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extensions ['ignore', 'ignore_ament_install']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'ignore'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'ignore_ament_install'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extensions ['colcon_pkg']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'colcon_pkg'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extensions ['colcon_meta']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'colcon_meta'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extensions ['ros']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'ros'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extensions ['cmake', 'python']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'cmake'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'python'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extensions ['python_setup_py']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages) by extension 'python_setup_py'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'ignore'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'ignore_ament_install'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extensions ['colcon_pkg']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'colcon_pkg'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extensions ['colcon_meta']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'colcon_meta'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extensions ['ros']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'ros'
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extensions ['cmake', 'python']
+[0.222s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'cmake'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'python'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extensions ['python_setup_py']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorConfig) by extension 'python_setup_py'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'ignore'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'ignore_ament_install'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extensions ['colcon_pkg']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'colcon_pkg'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extensions ['colcon_meta']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'colcon_meta'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extensions ['ros']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'ros'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extensions ['cmake', 'python']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'cmake'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'python'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extensions ['python_setup_py']
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ActuatorCyclic) by extension 'python_setup_py'
+[0.223s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extensions ['ignore', 'ignore_ament_install']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'ignore'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'ignore_ament_install'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extensions ['colcon_pkg']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'colcon_pkg'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extensions ['colcon_meta']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'colcon_meta'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extensions ['ros']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'ros'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extensions ['cmake', 'python']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'cmake'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'python'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extensions ['python_setup_py']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Base) by extension 'python_setup_py'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'ignore'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'ignore_ament_install'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extensions ['colcon_pkg']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'colcon_pkg'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extensions ['colcon_meta']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'colcon_meta'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extensions ['ros']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'ros'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extensions ['cmake', 'python']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'cmake'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'python'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extensions ['python_setup_py']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/BaseCyclic) by extension 'python_setup_py'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extensions ['ignore', 'ignore_ament_install']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'ignore'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'ignore_ament_install'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extensions ['colcon_pkg']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'colcon_pkg'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extensions ['colcon_meta']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'colcon_meta'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extensions ['ros']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'ros'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extensions ['cmake', 'python']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'cmake'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'python'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extensions ['python_setup_py']
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Common) by extension 'python_setup_py'
+[0.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'ignore'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'ignore_ament_install'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extensions ['colcon_pkg']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'colcon_pkg'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extensions ['colcon_meta']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'colcon_meta'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extensions ['ros']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'ros'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extensions ['cmake', 'python']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'cmake'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'python'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extensions ['python_setup_py']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ControlConfig) by extension 'python_setup_py'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'ignore'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'ignore_ament_install'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extensions ['colcon_pkg']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'colcon_pkg'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extensions ['colcon_meta']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'colcon_meta'
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extensions ['ros']
+[0.226s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'ros'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extensions ['cmake', 'python']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'cmake'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'python'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extensions ['python_setup_py']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceConfig) by extension 'python_setup_py'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extensions ['ignore', 'ignore_ament_install']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'ignore'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'ignore_ament_install'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extensions ['colcon_pkg']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'colcon_pkg'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extensions ['colcon_meta']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'colcon_meta'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extensions ['ros']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'ros'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extensions ['cmake', 'python']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'cmake'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'python'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extensions ['python_setup_py']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/DeviceManager) by extension 'python_setup_py'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'ignore'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'ignore_ament_install'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extensions ['colcon_pkg']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'colcon_pkg'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extensions ['colcon_meta']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'colcon_meta'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extensions ['ros']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'ros'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extensions ['cmake', 'python']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'cmake'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'python'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extensions ['python_setup_py']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/GripperCyclic) by extension 'python_setup_py'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'ignore'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'ignore_ament_install'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extensions ['colcon_pkg']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'colcon_pkg'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extensions ['colcon_meta']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'colcon_meta'
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extensions ['ros']
+[0.228s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'ros'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extensions ['cmake', 'python']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'cmake'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'python'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extensions ['python_setup_py']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectConfig) by extension 'python_setup_py'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extensions ['ignore', 'ignore_ament_install']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'ignore'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'ignore_ament_install'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extensions ['colcon_pkg']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'colcon_pkg'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extensions ['colcon_meta']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'colcon_meta'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extensions ['ros']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'ros'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extensions ['cmake', 'python']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'cmake'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'python'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extensions ['python_setup_py']
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/InterconnectCyclic) by extension 'python_setup_py'
+[0.229s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extensions ['ignore', 'ignore_ament_install']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'ignore'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'ignore_ament_install'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extensions ['colcon_pkg']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'colcon_pkg'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extensions ['colcon_meta']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'colcon_meta'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extensions ['ros']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'ros'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extensions ['cmake', 'python']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'cmake'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'python'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extensions ['python_setup_py']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/ProductConfiguration) by extension 'python_setup_py'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extensions ['ignore', 'ignore_ament_install']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'ignore'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'ignore_ament_install'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extensions ['colcon_pkg']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'colcon_pkg'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extensions ['colcon_meta']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'colcon_meta'
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extensions ['ros']
+[0.230s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'ros'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extensions ['cmake', 'python']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'cmake'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'python'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extensions ['python_setup_py']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/Session) by extension 'python_setup_py'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extensions ['ignore', 'ignore_ament_install']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'ignore'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'ignore_ament_install'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extensions ['colcon_pkg']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'colcon_pkg'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extensions ['colcon_meta']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'colcon_meta'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extensions ['ros']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'ros'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extensions ['cmake', 'python']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'cmake'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'python'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extensions ['python_setup_py']
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/messages/VisionConfig) by extension 'python_setup_py'
+[0.231s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'ignore_ament_install'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extensions ['colcon_pkg']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'colcon_pkg'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extensions ['colcon_meta']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'colcon_meta'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extensions ['ros']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'ros'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extensions ['cmake', 'python']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'cmake'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'python'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extensions ['python_setup_py']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/doc/markdown/summary_pages) by extension 'python_setup_py'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'ignore_ament_install'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extensions ['colcon_pkg']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'colcon_pkg'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extensions ['colcon_meta']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'colcon_meta'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'ros'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extensions ['cmake', 'python']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'cmake'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'python'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extensions ['python_setup_py']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples) by extension 'python_setup_py'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extensions ['ignore', 'ignore_ament_install']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'ignore'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'ignore_ament_install'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extensions ['colcon_pkg']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'colcon_pkg'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extensions ['colcon_meta']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'colcon_meta'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'ros'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extensions ['cmake', 'python']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'cmake'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'python'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extensions ['python_setup_py']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/000-Getting_Started) by extension 'python_setup_py'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extensions ['ignore', 'ignore_ament_install']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'ignore'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'ignore_ament_install'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extensions ['colcon_pkg']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'colcon_pkg'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extensions ['colcon_meta']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'colcon_meta'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extensions ['ros']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'ros'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extensions ['cmake', 'python']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'cmake'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'python'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extensions ['python_setup_py']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/100-Overview) by extension 'python_setup_py'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extensions ['ignore', 'ignore_ament_install']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'ignore'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'ignore_ament_install'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extensions ['colcon_pkg']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'colcon_pkg'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extensions ['colcon_meta']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'colcon_meta'
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extensions ['ros']
+[0.234s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'ros'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extensions ['cmake', 'python']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'cmake'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'python'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extensions ['python_setup_py']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/102-Movement_high_level) by extension 'python_setup_py'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'ignore'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'ignore_ament_install'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extensions ['colcon_pkg']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'colcon_pkg'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extensions ['colcon_meta']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'colcon_meta'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extensions ['ros']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'ros'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extensions ['cmake', 'python']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'cmake'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'python'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extensions ['python_setup_py']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/103-Gen3_uart_bridge) by extension 'python_setup_py'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'ignore'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'ignore_ament_install'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extensions ['colcon_pkg']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'colcon_pkg'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extensions ['colcon_meta']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'colcon_meta'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extensions ['ros']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'ros'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extensions ['cmake', 'python']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'cmake'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'python'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extensions ['python_setup_py']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge) by extension 'python_setup_py'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extensions ['ignore', 'ignore_ament_install']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'ignore'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'ignore_ament_install'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extensions ['colcon_pkg']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'colcon_pkg'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extensions ['colcon_meta']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'colcon_meta'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extensions ['ros']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'ros'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extensions ['cmake', 'python']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'cmake'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'python'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extensions ['python_setup_py']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/104-Gen3_gpio_bridge/arduino_gpio_example_firmware) by extension 'python_setup_py'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'ignore'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'ignore_ament_install'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extensions ['colcon_pkg']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'colcon_pkg'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extensions ['colcon_meta']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'colcon_meta'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extensions ['ros']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'ros'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extensions ['cmake', 'python']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'cmake'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'python'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extensions ['python_setup_py']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/105-Gen3_i2c_bridge) by extension 'python_setup_py'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extensions ['ignore', 'ignore_ament_install']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'ignore'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'ignore_ament_install'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extensions ['colcon_pkg']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'colcon_pkg'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extensions ['colcon_meta']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'colcon_meta'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extensions ['ros']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'ros'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extensions ['cmake', 'python']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'cmake'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'python'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extensions ['python_setup_py']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/106-Gripper_command) by extension 'python_setup_py'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extensions ['ignore', 'ignore_ament_install']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'ignore'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'ignore_ament_install'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extensions ['colcon_pkg']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'colcon_pkg'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extensions ['colcon_meta']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'colcon_meta'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extensions ['ros']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'ros'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extensions ['cmake', 'python']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'cmake'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'python'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extensions ['python_setup_py']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/107-Gripper_low_level_command) by extension 'python_setup_py'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extensions ['ignore', 'ignore_ament_install']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'ignore_ament_install'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extensions ['colcon_pkg']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'colcon_pkg'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extensions ['colcon_meta']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'colcon_meta'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extensions ['ros']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'ros'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extensions ['cmake', 'python']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'cmake'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'python'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extensions ['python_setup_py']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/108-Gen3_torque_control) by extension 'python_setup_py'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'ignore_ament_install'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extensions ['colcon_pkg']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'colcon_pkg'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extensions ['colcon_meta']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'colcon_meta'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extensions ['ros']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'ros'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extensions ['cmake', 'python']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'cmake'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'python'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extensions ['python_setup_py']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/109-Gen3_ethernet_bridge) by extension 'python_setup_py'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extensions ['ignore', 'ignore_ament_install']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'ignore'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'ignore_ament_install'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extensions ['colcon_pkg']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'colcon_pkg'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extensions ['colcon_meta']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'colcon_meta'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extensions ['ros']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'ros'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extensions ['cmake', 'python']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'cmake'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'python'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extensions ['python_setup_py']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/110-Waypoints) by extension 'python_setup_py'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extensions ['ignore', 'ignore_ament_install']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'ignore'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'ignore_ament_install'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extensions ['colcon_pkg']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'colcon_pkg'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extensions ['colcon_meta']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'colcon_meta'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extensions ['ros']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'ros'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extensions ['cmake', 'python']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'cmake'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'python'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extensions ['python_setup_py']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/111-kinematics) by extension 'python_setup_py'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extensions ['ignore', 'ignore_ament_install']
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'ignore'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'ignore_ament_install'
+[0.241s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extensions ['colcon_pkg']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'colcon_pkg'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extensions ['colcon_meta']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'colcon_meta'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extensions ['ros']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'ros'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extensions ['cmake', 'python']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'cmake'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'python'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extensions ['python_setup_py']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/500-Gen3_vision_configuration) by extension 'python_setup_py'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'ignore'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'ignore_ament_install'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extensions ['colcon_pkg']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'colcon_pkg'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extensions ['colcon_meta']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'colcon_meta'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extensions ['ros']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'ros'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extensions ['cmake', 'python']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'cmake'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'python'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extensions ['python_setup_py']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/api_python/examples/__pycache__) by extension 'python_setup_py'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/log) by extensions ['ignore', 'ignore_ament_install']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/log) by extension 'ignore'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/log) ignored
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extensions ['ignore', 'ignore_ament_install']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'ignore'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'ignore_ament_install'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extensions ['colcon_pkg']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'colcon_pkg'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extensions ['colcon_meta']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'colcon_meta'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extensions ['ros']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'ros'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extensions ['cmake', 'python']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'cmake'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'python'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extensions ['python_setup_py']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src) by extension 'python_setup_py'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extensions ['ignore', 'ignore_ament_install']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'ignore'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'ignore_ament_install'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extensions ['colcon_pkg']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'colcon_pkg'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extensions ['colcon_meta']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'colcon_meta'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extensions ['ros']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'ros'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extensions ['cmake', 'python']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'cmake'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'python'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extensions ['python_setup_py']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex) by extension 'python_setup_py'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extensions ['ignore', 'ignore_ament_install']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'ignore'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'ignore_ament_install'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extensions ['colcon_pkg']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'colcon_pkg'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extensions ['colcon_meta']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'colcon_meta'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extensions ['ros']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'ros'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extensions ['cmake', 'python']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'cmake'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'python'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extensions ['python_setup_py']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty) by extension 'python_setup_py'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['ignore', 'ignore_ament_install']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'ignore'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'ignore_ament_install'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['colcon_pkg']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'colcon_pkg'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['colcon_meta']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'colcon_meta'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['ros']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'ros'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['cmake', 'python']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'cmake'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'python'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extensions ['python_setup_py']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration) by extension 'python_setup_py'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['ignore', 'ignore_ament_install']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'ignore'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'ignore_ament_install'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['colcon_pkg']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'colcon_pkg'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['colcon_meta']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'colcon_meta'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['ros']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'ros'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['cmake', 'python']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'cmake'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'python'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extensions ['python_setup_py']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/3rdParty/Mobile_platform_integration/clearpath) by extension 'python_setup_py'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extensions ['ignore', 'ignore_ament_install']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'ignore'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'ignore_ament_install'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extensions ['colcon_pkg']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'colcon_pkg'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extensions ['colcon_meta']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'colcon_meta'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extensions ['ros']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'ros'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extensions ['cmake', 'python']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'cmake'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'python'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extensions ['python_setup_py']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc) by extension 'python_setup_py'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extensions ['ignore', 'ignore_ament_install']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'ignore'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'ignore_ament_install'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extensions ['colcon_pkg']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'colcon_pkg'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extensions ['colcon_meta']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'colcon_meta'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extensions ['ros']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'ros'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extensions ['cmake', 'python']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'cmake'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'python'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extensions ['python_setup_py']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/doc/resources) by extension 'python_setup_py'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extensions ['ignore', 'ignore_ament_install']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extension 'ignore'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extension 'ignore_ament_install'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extensions ['colcon_pkg']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extension 'colcon_pkg'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extensions ['colcon_meta']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extension 'colcon_meta'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extensions ['ros']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api) by extension 'ros'
+[0.252s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_api' with type 'ros.ament_cmake' and name 'kortex_api'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extension 'ignore_ament_install'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extensions ['colcon_pkg']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extension 'colcon_pkg'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extensions ['colcon_meta']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extension 'colcon_meta'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extensions ['ros']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup) by extension 'ros'
+[0.254s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_bringup' with type 'ros.ament_cmake' and name 'kortex_bringup'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extensions ['ignore', 'ignore_ament_install']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extension 'ignore'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extension 'ignore_ament_install'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extensions ['colcon_pkg']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extension 'colcon_pkg'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extensions ['colcon_meta']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extension 'colcon_meta'
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extensions ['ros']
+[0.254s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description) by extension 'ros'
+[0.255s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_description' with type 'ros.ament_cmake' and name 'kortex_description'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extension 'ignore'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extension 'ignore_ament_install'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extensions ['colcon_pkg']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extension 'colcon_pkg'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extensions ['colcon_meta']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extension 'colcon_meta'
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extensions ['ros']
+[0.255s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver) by extension 'ros'
+[0.256s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_driver' with type 'ros.ament_cmake' and name 'kortex_driver'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'ignore_ament_install'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extensions ['colcon_pkg']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'colcon_pkg'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extensions ['colcon_meta']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'colcon_meta'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extensions ['ros']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'ros'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extensions ['cmake', 'python']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'cmake'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'python'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extensions ['python_setup_py']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config) by extension 'python_setup_py'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'ignore_ament_install'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['colcon_pkg']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'colcon_pkg'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['colcon_meta']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'colcon_meta'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extensions ['ros']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config) by extension 'ros'
+[0.258s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_6dof_robotiq_2f_85_moveit_config' with type 'ros.ament_cmake' and name 'kinova_gen3_6dof_robotiq_2f_85_moveit_config'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'ignore'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'ignore_ament_install'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['colcon_pkg']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'colcon_pkg'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['colcon_meta']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'colcon_meta'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extensions ['ros']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config) by extension 'ros'
+[0.260s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_7dof_robotiq_2f_85_moveit_config' with type 'ros.ament_cmake' and name 'kinova_gen3_7dof_robotiq_2f_85_moveit_config'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'ignore'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'ignore_ament_install'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['colcon_pkg']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'colcon_pkg'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['colcon_meta']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'colcon_meta'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extensions ['ros']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config) by extension 'ros'
+[0.261s] DEBUG:colcon.colcon_core.package_identification:Package '/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/kinova_gen3_lite_moveit_config' with type 'ros.ament_cmake' and name 'kinova_gen3_lite_moveit_config'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'ignore_ament_install'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extensions ['colcon_pkg']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'colcon_pkg'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extensions ['colcon_meta']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'colcon_meta'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extensions ['ros']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'ros'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extensions ['cmake', 'python']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'cmake'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'python'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extensions ['python_setup_py']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(/home/xavier/kinova-cinema-bot/src/ros2_kortex/kortex_moveit_config/launch) by extension 'python_setup_py'
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
