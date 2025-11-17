@@ -49,3 +49,6 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Kinova ROS API
+Kinova-kortex2_Gen3_G3L/
