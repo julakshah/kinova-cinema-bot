@@ -29,3 +29,7 @@ git submodule update --init
 ```
 ros2 launch
 ```
+
+## Resources & Sources
+* [ros2_kortex api](https://github.com/Kinovarobotics/ros2_kortex/tree/humble?tab=readme-ov-file)
+* [Gaurav Gupta Medium post on ROS Moveit Servo](https://medium.com/black-coffee-robotics/ros-moveit-servo-with-kinova-arm-9b0f4baa80c6)
