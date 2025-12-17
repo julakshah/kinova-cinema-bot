@@ -1,0 +1,24 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/control.dir/src/control.cpp.o[0m
+[100%] [32m[1mLinking CXX executable control[0m
+[100%] Built target control
+-- Install configuration: ""
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/lib/cinema-bot/control
+-- Set runtime path of "/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/lib/cinema-bot/control" to ""
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/lib/cinema-bot/vision.py
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/config
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/config/blaze_face_short_range.tflite
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/ament_index/resource_index/package_run_dependencies/cinema-bot
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/ament_index/resource_index/parent_prefix_path/cinema-bot
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/environment/ament_prefix_path.sh
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/environment/ament_prefix_path.dsv
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/environment/path.sh
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/environment/path.dsv
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/local_setup.bash
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/local_setup.sh
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/local_setup.zsh
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/local_setup.dsv
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/package.dsv
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/ament_index/resource_index/packages/cinema-bot
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/cmake/cinema-botConfig.cmake
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/cmake/cinema-botConfig-version.cmake
+-- Installing: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot/share/cinema-bot/package.xml

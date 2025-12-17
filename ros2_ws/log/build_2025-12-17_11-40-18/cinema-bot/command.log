@@ -1,0 +1,2 @@
+Invoking command in '/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot -DCMAKE_INSTALL_PREFIX=/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot
+Invoked command in '/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot' returned '1': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot -DCMAKE_INSTALL_PREFIX=/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/install/cinema-bot
