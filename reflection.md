@@ -95,3 +95,17 @@ with ROS based robot control. I learned ROS in C++ and have grown comfrotable
 integrating with predefined packages to develop my own software. I think that,
 considering the amount of time I was able to dedicate to this project, I
 achieved and learned much.
+
+## Future
+
+Next steps on this project are getting some sort of task space movement working.
+Also, some creature comfort features (like launch file) would be nice. Following
+that I plan on exploring sim side camera implementation so I can test person
+following through a person model.
+
+## Skill Mastery
+
+I believe I've got a beginner/intermediate mastery of ROS2 on both the python
+and C++ side. I've also gained a lot of fringe experience that culminates into a
+better system-level understanding of how middleware works and how to debug
+errors.
