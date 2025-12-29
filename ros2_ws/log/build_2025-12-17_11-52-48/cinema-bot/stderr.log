@@ -1,0 +1,8 @@
+[01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:27:11:[m[K [01;31m[Kerror: [m[K‘[01m[Ksping[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[Kspin[m[K’?
+   27 |   rclcpp::[01;31m[Ksping[m[K(std::make_shared<Controller>());
+      |           [01;31m[K^~~~~[m[K
+      |           [32m[Kspin[m[K
+gmake[2]: *** [CMakeFiles/control.dir/build.make:76: CMakeFiles/control.dir/src/control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

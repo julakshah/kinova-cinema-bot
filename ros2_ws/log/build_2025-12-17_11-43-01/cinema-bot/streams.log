@@ -1,0 +1,38 @@
+[0.009s] Invoking command in '/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot -- -j22 -l22
+[0.022s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.076s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.109s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.113s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.120s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.129s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.141s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.176s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.178s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.254s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.274s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.299s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.308s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.352s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.354s] -- Found Threads: TRUE  
+[0.395s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.443s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.444s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/include>
+[0.444s] -- Configured cppcheck exclude dirs and/or files: 
+[0.444s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.444s] -- Added test 'lint_cmake' to check CMake code style
+[0.444s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.444s] -- Added test 'uncrustify' to check C / C++ code style
+[0.444s] -- Configured uncrustify additional arguments: 
+[0.444s] -- Added test 'xmllint' to check XML markup files
+[0.445s] -- Configuring done
+[0.447s] -- Generating done
+[0.449s] -- Build files have been written to: /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot
+[0.464s] [ 50%] [32mBuilding CXX object CMakeFiles/control.dir/src/control.cpp.o[0m
+[0.493s] [01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:6:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+[0.493s]     6 | #include [01;31m[K"rclcpp/rclcpp.hpp"[m[K
+[0.493s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.494s] compilation terminated.
+[0.495s] gmake[2]: *** [CMakeFiles/control.dir/build.make:76: CMakeFiles/control.dir/src/control.cpp.o] Error 1
+[0.495s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control.dir/all] Error 2
+[0.495s] gmake: *** [Makefile:146: all] Error 2
+[0.497s] Invoked command in '/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/build/cinema-bot -- -j22 -l22

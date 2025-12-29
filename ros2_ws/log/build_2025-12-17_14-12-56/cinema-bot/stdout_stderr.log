@@ -1,0 +1,18 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/control.dir/src/control.cpp.o[0m
+[01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:31:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ was not declared in this scope
+   31 |   rclcpp::Publisher<[01;31m[Kstd_msgs[m[K::msg::String>::SharedPtr publisher_;
+      |                     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:31:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   31 |   rclcpp::Publisher<std_msgs::msg::String[01;31m[K>[m[K::SharedPtr publisher_;
+      |                                          [01;31m[K^[m[K
+[01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:31:45:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   31 |   rclcpp::Publisher<std_msgs::msg::String>::[01;31m[KSharedPtr[m[K publisher_;
+      |                                             [01;31m[K^~~~~~~~~[m[K
+      |                                                      [32m[K;[m[K
+[01m[K/home/jshah/ros2_ws/kinova-cinema-bot/ros2_ws/src/cinema-bot/src/control.cpp:31:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ does not name a type; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+   31 |   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr [01;31m[Kpublisher_[m[K;
+      |                                                       [01;31m[K^~~~~~~~~~[m[K
+      |                                                       [32m[Krmw_publisher_t[m[K
+gmake[2]: *** [CMakeFiles/control.dir/build.make:76: CMakeFiles/control.dir/src/control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
