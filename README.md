@@ -20,9 +20,21 @@ Primary Challenges:
 - Creating a ros2 package containing both python and C++ nodes
 - Luanching MoveIt2 with the ros2_kortex API
 
+Please see reflection.md for the full reflection.
+
 ## Setup
 
-The setup for this project assumes the system it is being run on is Ubuntu 22.04
+This setup assumes the following system and software requirements. If you are
+missing mediapipe look [HERE](https://pypi.org/project/mediapipe/). If you are
+missing the Kortex API look [HERE](https://github.com/Kinovarobotics/ros2_kortex/tree/humble).
+
+- Ubuntu 22.04
+- ROS2 Humble
+- Google Mediapipe Python
+- Kinova Kortex API
+- CMake & Colcon
+
+Make sure to source your ros environment.
 
 - Source ros2 "**source /opt/ros/humble/setup.bash**"
 
@@ -32,35 +44,38 @@ For more information see the [ROS2 Humble installation page](https://docs.ros.or
 source /opt/ros/humble/setup.bash
 ```
 
-### Dependencies
-
-- Ubuntu 22.04
-- ROS2 Humble
-- Google Mediapipe
-- CMake & Colcon
-
 ### Cloning
 
-This project contains submodules. When initially the repository use the
---recurse-submodules command.
+Please clone as normal or using the following command in the desired directory.
 
-```
-git clone --recurse-submodules git@github.com:julakshah/kinova-cinema-bot.git
-```
-
-Alternatively, if you've already cloned the repository using git clone, you can
-run the following command to ensure you've got the submodules locally.
-
-```
-git submodule update --init
+```bash
+git clone git@github.com:julakshah/kinova-cinema-bot.git
 ```
 
 ## Running
 
-Please make sure you have two TTY's open.
+Please make sure you have three TTY's open.
 
+in the ros2_ws bin, build and source the package 'cinema-bot' as you would any
+other package.
+
+In the first TTY run:
+
+```bash
+ros2 launch kinova_gen3_7dof_robotiq_2f_85_moveit_config sim.launch.py \
+  use_sim_time:=true
 ```
-ros2 launch
+
+In the second TTY run:
+
+```bash
+ros2 run cinema-bot vision.py
+```
+
+In the third TTY run:
+
+```bash
+ros2 run cinema-bot control
 ```
 
 ## Resources & Sources
